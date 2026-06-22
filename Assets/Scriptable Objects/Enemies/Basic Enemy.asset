@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd0f6e423d2ded49841947e41eaf0d5, type: 3}
-  m_Name: Player Data
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  moveSpeed: 10
-  moveAccelAmount: 23
-  moveDecelAmount: 15
-  baseHealth: 100
+  m_Script: {fileID: 11500000, guid: 61af7a21bd8d513498d278e8e1a8c814, type: 3}
+  m_Name: Basic Enemy
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  moveSpeed: 3
+  contactDamage: 10

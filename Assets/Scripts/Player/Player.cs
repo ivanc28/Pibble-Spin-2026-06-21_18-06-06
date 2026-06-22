@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public PlayerData data;
     public Rigidbody2D rb;
     private Vector2 moveInput;
+    private float health;
+    private bool canMove;
     public static Player Instance { get; set; }
     private void Awake()
     {
@@ -16,6 +18,8 @@ public class Player : MonoBehaviour
             return;
         }
         Instance = this;
+        health = data.baseHealth;
+        canMove = true;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,7 +35,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!canMove)
+        {
+            return;
+        }
+        if(health <= 0)
+        {
+            Die();
+        }
     }
     private void FixedUpdate()
     {
@@ -54,5 +65,15 @@ public class Player : MonoBehaviour
         Vector2 movement = velocityDif * accelRate;
 
         rb.AddForce(movement, ForceMode2D.Force);
+    }
+
+    public void DamagePlayer(float dmg)
+    {
+        health -= dmg;
+    }
+    public void Die()
+    {
+        Debug.Log("you ded");
+        canMove = false;
     }
 }

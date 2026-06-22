@@ -6,4 +6,5 @@ public class PlayerData : ScriptableObject
     public float moveSpeed;
     public float moveAccelAmount;
     public float moveDecelAmount;
+    public float baseHealth;
 }
