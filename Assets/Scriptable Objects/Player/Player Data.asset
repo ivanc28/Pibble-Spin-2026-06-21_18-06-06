@@ -16,3 +16,4 @@ MonoBehaviour:
   moveAccelAmount: 23
   moveDecelAmount: 15
   baseHealth: 100
+  basePickupRange: 3

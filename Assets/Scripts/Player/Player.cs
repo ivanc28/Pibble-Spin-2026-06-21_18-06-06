@@ -6,9 +6,11 @@ public class Player : MonoBehaviour
     [Header("Components")]
     public PlayerData data;
     public Rigidbody2D rb;
+    public PlayerInventory inventory;
     private Vector2 moveInput;
     private float health;
     private bool canMove;
+    private float pickupRange;
     public static Player Instance { get; set; }
     private void Awake()
     {
@@ -18,8 +20,10 @@ public class Player : MonoBehaviour
             return;
         }
         Instance = this;
+        inventory = new();
         health = data.baseHealth;
         canMove = true;
+        pickupRange = data.basePickupRange;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -66,7 +70,10 @@ public class Player : MonoBehaviour
 
         rb.AddForce(movement, ForceMode2D.Force);
     }
-
+    public bool ItemInRange(Transform item)
+    {
+        return Vector2.Distance(item.position, transform.position) <= pickupRange;
+    }
     public void DamagePlayer(float dmg)
     {
         health -= dmg;
