@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     private float spinChargeDecreaseRate;
     private float spinChargeIncreaseRate;
     private float spinSpeed;
+    private float attackTriggerTimer;
 
     public TextMeshProUGUI textComponent; 
 
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
         spinChargeDecreaseRate = data.spinChargeDecreaseRate;
         spinChargeIncreaseRate = data.spinChargeIncreaseRate;
         spinSpeed = data.baseSpinSpeed;
+        attackTriggerTimer = 0;
         pickupRange = data.basePickupRange;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -78,6 +80,11 @@ public class Player : MonoBehaviour
         if (isSpinning && spinCharge > 0)
         {
             spinCharge -= spinChargeDecreaseRate * Time.fixedDeltaTime;
+            if (attackTriggerTimer <= 0)
+            {
+                BasicAttack.Instance.Trigger(1.0f);
+                attackTriggerTimer = 1/spinSpeed;
+            }
             if (spinCharge < 0)
             {
                 spinCharge = 0;

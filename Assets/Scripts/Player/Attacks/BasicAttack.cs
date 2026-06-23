@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BasicAttack : Attack
 {
-    public float damage;
     private Collider2D myCollider;
     private float hitDuration;
     private float hitActivationTime;
@@ -21,7 +20,7 @@ public class BasicAttack : Attack
         Instance = this;
         myCollider = GetComponent<Collider2D>();
         myCollider.enabled = false;
-        hitDuration = 0.5f;
+        hitDuration = 0.1f;
         hitActivationTime = 0;
     }
 
