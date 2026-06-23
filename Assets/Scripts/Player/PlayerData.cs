@@ -10,7 +10,7 @@ public class PlayerData : ScriptableObject
     public float maxSpinCharge;
     public float spinChargeDecreaseRate;
     public float spinChargeIncreaseRate;
-    public float baseSpinSpeed;
+    public float baseSpinsPerSecond;
 
     public float basePickupRange;
 }

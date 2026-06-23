@@ -19,5 +19,5 @@ MonoBehaviour:
   maxSpinCharge: 10
   spinChargeDecreaseRate: 3
   spinChargeIncreaseRate: 3
-  baseSpinSpeed: 1
+  baseSpinSpeed: 5
   basePickupRange: 3
