@@ -1,7 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Attack : ScriptableObject
+public abstract class Attack : MonoBehaviour
 {
-    [SerializeField] float damage;
-    public void Trigger(float damageModifier){}
+    float damage;
+    public abstract void Trigger(float damageModifier);
 }

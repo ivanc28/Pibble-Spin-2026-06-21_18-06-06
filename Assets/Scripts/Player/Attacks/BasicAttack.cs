@@ -1,19 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicAttack : Attack
 {
-    [SerializeField] float damage;
+    public float damage;
     private Collider2D myCollider;
     private float hitDuration;
     private float hitActivationTime;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static BasicAttack Instance { get; set; }
+
+    private void Awake()
     {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
         myCollider = GetComponent<Collider2D>();
         myCollider.enabled = false;
         hitDuration = 0.5f;
         hitActivationTime = 0;
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
@@ -31,12 +46,14 @@ public class BasicAttack : Attack
             {
                 hitActivationTime = 0;
                 myCollider.enabled = false;
+                Debug.Log("deactivate collider");
             }
         }
     }
 
-    public void Trigger(float damageModifier)
+    public override void Trigger(float damageModifier)
     {
         myCollider.enabled = true;
+        Debug.Log("activate collider");
     }
 }
