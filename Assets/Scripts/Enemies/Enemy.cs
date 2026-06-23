@@ -70,5 +70,10 @@ public class Enemy : MonoBehaviour
         {
             Player.Instance.DamagePlayer(data.contactDamage);
         }
+
+        if (collision.gameObject.CompareTag("Attack"))
+        {
+            Debug.Log("enemy hit");
+        }
     }
 }

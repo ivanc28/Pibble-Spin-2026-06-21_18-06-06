@@ -85,6 +85,10 @@ public class Player : MonoBehaviour
                 BasicAttack.Instance.Trigger(1.0f);
                 attackTriggerTimer = 1/spinSpeed;
             }
+            else
+            {
+                attackTriggerTimer -= 1 * Time.fixedDeltaTime;
+            }
             if (spinCharge < 0)
             {
                 spinCharge = 0;
