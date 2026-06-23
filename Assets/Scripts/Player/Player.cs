@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+using TMPro;
+
 public class Player : MonoBehaviour
 {
     [Header("Components")]
@@ -12,6 +14,16 @@ public class Player : MonoBehaviour
     private bool canMove;
     private float pickupRange;
     public static Player Instance { get; set; }
+
+    private bool isSpinning;
+    private float spinCharge;
+    private float maxSpinCharge;
+    private float spinChargeDecreaseRate;
+    private float spinChargeIncreaseRate;
+    private float spinSpeed;
+
+    public TextMeshProUGUI textComponent; 
+
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -23,6 +35,12 @@ public class Player : MonoBehaviour
         inventory = new();
         health = data.baseHealth;
         canMove = true;
+        isSpinning = false;
+        maxSpinCharge = data.maxSpinCharge;
+        spinCharge = maxSpinCharge;
+        spinChargeDecreaseRate = data.spinChargeDecreaseRate;
+        spinChargeIncreaseRate = data.spinChargeIncreaseRate;
+        spinSpeed = data.baseSpinSpeed;
         pickupRange = data.basePickupRange;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,10 +65,33 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            Debug.Log("Space Key Pressed!");
+            ToggleSpin();
+        }
+        textComponent.text = "charge: " + spinCharge.ToString();
     }
     private void FixedUpdate()
     {
         Move();
+        if (isSpinning && spinCharge > 0)
+        {
+            spinCharge -= spinChargeDecreaseRate * Time.fixedDeltaTime;
+            if (spinCharge < 0)
+            {
+                spinCharge = 0;
+                ToggleSpin();
+            }
+        }
+        else if (spinCharge <= maxSpinCharge)
+        {
+            spinCharge += spinChargeIncreaseRate * Time.fixedDeltaTime;
+            if (spinCharge > maxSpinCharge)
+            {
+                spinCharge = maxSpinCharge;
+            }
+        }
     }
     private void Move()
     {
@@ -70,6 +111,12 @@ public class Player : MonoBehaviour
 
         rb.AddForce(movement, ForceMode2D.Force);
     }
+    private void ToggleSpin()
+    {
+        isSpinning = !isSpinning;
+        Debug.Log(isSpinning);
+    }
+
     public bool ItemInRange(Transform item)
     {
         return Vector2.Distance(item.position, transform.position) <= pickupRange;
