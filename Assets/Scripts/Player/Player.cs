@@ -8,9 +8,11 @@ public class Player : MonoBehaviour
     [Header("Components")]
     public PlayerData data;
     public Rigidbody2D rb;
+    public PlayerInventory inventory;
     private Vector2 moveInput;
     private float health;
     private bool canMove;
+    private float pickupRange;
     public static Player Instance { get; set; }
 
     private bool isSpinning;
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour
             return;
         }
         Instance = this;
+        inventory = new();
         health = data.baseHealth;
         canMove = true;
         isSpinning = false;
@@ -38,6 +41,7 @@ public class Player : MonoBehaviour
         spinChargeDecreaseRate = data.spinChargeDecreaseRate;
         spinChargeIncreaseRate = data.spinChargeIncreaseRate;
         spinSpeed = data.baseSpinSpeed;
+        pickupRange = data.basePickupRange;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -113,6 +117,10 @@ public class Player : MonoBehaviour
         Debug.Log(isSpinning);
     }
 
+    public bool ItemInRange(Transform item)
+    {
+        return Vector2.Distance(item.position, transform.position) <= pickupRange;
+    }
     public void DamagePlayer(float dmg)
     {
         health -= dmg;
