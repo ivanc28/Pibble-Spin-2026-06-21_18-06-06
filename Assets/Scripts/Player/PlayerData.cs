@@ -7,4 +7,8 @@ public class PlayerData : ScriptableObject
     public float moveAccelAmount;
     public float moveDecelAmount;
     public float baseHealth;
+    public float maxSpinCharge;
+    public float spinChargeDecreaseRate;
+    public float spinChargeIncreaseRate;
+    public float baseSpinSpeed;
 }

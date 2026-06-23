@@ -16,3 +16,6 @@ MonoBehaviour:
   moveAccelAmount: 23
   moveDecelAmount: 15
   baseHealth: 100
+  maxSpinCharge: 10
+  spinChargeDecreaseRate: 3
+  spinChargeIncreaseRate: 3
