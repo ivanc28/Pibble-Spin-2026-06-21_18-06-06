@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = moveDir.normalized * data.moveSpeed;
         if(Mathf.Abs(rb.angularVelocity) >= data.killSpinSpeed)
         {
-            // Die();
+            Die();
         }
     }
     private void Die()
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     private void SpawnCurrency()
     {
         // Calculate an increment value based on this example: if coins are 1, 5, 10, then we do powers of 3, 9*1 + 3*5 + 1*10 = 34, so incrementValue = 34
-        int incrementValue = 3;
+        int incrementValue = 0;
         int numCoinsUsing = data.currencyValues.Length;
         for(int numCoinsTrying = numCoinsUsing;  numCoinsTrying > 0; numCoinsTrying--)
         {
