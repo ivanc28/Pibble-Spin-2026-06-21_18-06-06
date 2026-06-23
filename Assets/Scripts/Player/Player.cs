@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private float maxSpinCharge;
     private float spinChargeDecreaseRate;
     private float spinChargeIncreaseRate;
-    private float spinSpeed;
+    private float spinsPerSecond;
     private float attackTriggerTimer;
 
     public TextMeshProUGUI textComponent; 
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         spinCharge = maxSpinCharge;
         spinChargeDecreaseRate = data.spinChargeDecreaseRate;
         spinChargeIncreaseRate = data.spinChargeIncreaseRate;
-        spinSpeed = data.baseSpinSpeed;
+        spinsPerSecond = data.baseSpinsPerSecond;
         attackTriggerTimer = 0;
         pickupRange = data.basePickupRange;
     }
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
             if (attackTriggerTimer <= 0)
             {
                 BasicAttack.Instance.Trigger();
-                attackTriggerTimer = 1/spinSpeed;
+                attackTriggerTimer = 1/spinsPerSecond;
             }
             else
             {
