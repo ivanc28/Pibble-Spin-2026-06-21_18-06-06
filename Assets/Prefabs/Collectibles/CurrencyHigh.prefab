@@ -50,8 +50,8 @@ MonoBehaviour:
   currencyAmt: 10
   moveSpeed: 8
   rb: {fileID: 4093688403640022261}
-  minSpawnSpeed: 4
-  maxSpawnSpeed: 6
+  minSpawnSpeed: 6
+  maxSpawnSpeed: 10
 --- !u!58 &1375164126869950075
 CircleCollider2D:
   m_ObjectHideFlags: 0
