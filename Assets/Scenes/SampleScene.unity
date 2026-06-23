@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 1267245380}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -687,6 +687,10 @@ PrefabInstance:
     - target: {fileID: 3166989030818888025, guid: 119948193534c7b40969f6a05af8d26a, type: 3}
       propertyPath: m_Name
       value: Basic Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166989030818888025, guid: 119948193534c7b40969f6a05af8d26a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7796846793815158206, guid: 119948193534c7b40969f6a05af8d26a, type: 3}
       propertyPath: m_LocalPosition.x

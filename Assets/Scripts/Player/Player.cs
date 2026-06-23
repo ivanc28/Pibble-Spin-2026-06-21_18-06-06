@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
             spinCharge -= spinChargeDecreaseRate * Time.fixedDeltaTime;
             if (attackTriggerTimer <= 0)
             {
-                BasicAttack.Instance.Trigger(1.0f);
+                BasicAttack.Instance.Trigger();
                 attackTriggerTimer = 1/spinSpeed;
             }
             else

@@ -6,7 +6,8 @@ public class BasicAttack : Attack
 {
     private Collider2D myCollider;
     private float hitDuration;
-    private float hitActivationTime;
+    private float hitActivationTimer;
+    private float modifiedDamage;
 
     public static BasicAttack Instance { get; set; }
 
@@ -21,7 +22,8 @@ public class BasicAttack : Attack
         myCollider = GetComponent<Collider2D>();
         myCollider.enabled = false;
         hitDuration = 0.1f;
-        hitActivationTime = 0;
+        hitActivationTimer = 0;
+        modifiedDamage = damage;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,19 +42,23 @@ public class BasicAttack : Attack
     {
         if (myCollider.enabled)
         {
-            hitActivationTime += 1 * Time.fixedDeltaTime;
-            if (hitActivationTime >= hitDuration)
+            hitActivationTimer += 1 * Time.fixedDeltaTime;
+            if (hitActivationTimer >= hitDuration)
             {
-                hitActivationTime = 0;
+                hitActivationTimer = 0;
                 myCollider.enabled = false;
                 Debug.Log("deactivate collider");
             }
         }
     }
 
-    public override void Trigger(float damageModifier)
+    public override void Trigger()
     {
         myCollider.enabled = true;
         Debug.Log("activate collider");
+    }
+    public void ApplyDamageModifier(float damageModifier)
+    {
+        modifiedDamage = damage * damageModifier;
     }
 }
