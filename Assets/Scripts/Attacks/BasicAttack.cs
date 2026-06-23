@@ -61,4 +61,8 @@ public class BasicAttack : Attack
     {
         modifiedDamage = damage * damageModifier;
     }
+    public float GetDamage()
+    {
+        return modifiedDamage;
+    }
 }

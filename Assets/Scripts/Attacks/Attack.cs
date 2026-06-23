@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class Attack : MonoBehaviour
 {
-    [SerializeField] float damage;
+    public float damage;
     public abstract void Trigger();
 }
