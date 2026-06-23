@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Enemy : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Enemy : MonoBehaviour
         Vector2 moveDir = Player.Instance.transform.position - transform.position;
         rb.linearVelocity = moveDir.normalized * data.moveSpeed;
         if(Mathf.Abs(rb.angularVelocity) >= data.killSpinSpeed)
+        {
+            //Die();
+        }
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Die();
         }
@@ -54,15 +59,30 @@ public class Enemy : MonoBehaviour
         }
         int startingSpawnCountOfEachCurrency = data.currencyDropped / incrementValue;
         int remainingCurrency = data.currencyDropped % incrementValue;
-        for(int i = 0; i < startingSpawnCountOfEachCurrency; i++)
+        for(int i = 0; i < numCoinsUsing; i++)
         {
-            for(int j = 0; j < numCoinsUsing; j++)
-            {
-                Currency currency = Instantiate(data.currencyValues[j], transform.position, Quaternion.identity);
-                currency.SpawnAtRandomSpeed();
-            }
+            InstantiateCurrency(i, startingSpawnCountOfEachCurrency * ((int)Mathf.Pow(3, numCoinsUsing - i - 1)));
         }
 
+        // greedy coin change algorithm for remaining currency
+        for (int coinIndex = numCoinsUsing - 1; coinIndex >= 0; coinIndex--)
+        {
+            int count = remainingCurrency / data.currencyValues[coinIndex].currencyAmt;
+            for(int i = 0; i < count; i++)
+            {
+                InstantiateCurrency(coinIndex, 1);
+            }
+            remainingCurrency %= data.currencyValues[coinIndex].currencyAmt;
+        }
+    }
+
+    private void InstantiateCurrency(int index, int numTimes)
+    {
+        for(int i = 0; i < numTimes; i++)
+        {
+            Currency currency = Instantiate(data.currencyValues[index], transform.position, Quaternion.identity);
+            currency.SpawnAtRandomSpeed();
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

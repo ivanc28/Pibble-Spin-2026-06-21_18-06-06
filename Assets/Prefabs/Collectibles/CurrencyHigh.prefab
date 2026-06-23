@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1375164126869950075}
   - component: {fileID: 4093688403640022261}
   m_Layer: 0
-  m_Name: Currency
+  m_Name: CurrencyHigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,8 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a6b64ced40eab47b2bfc84eb7ae20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Currency
-  currencyAmt: 5
+  currencyAmt: 10
   moveSpeed: 8
+  rb: {fileID: 4093688403640022261}
+  minSpawnSpeed: 4
+  maxSpawnSpeed: 6
 --- !u!58 &1375164126869950075
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -98,7 +101,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 1
+  m_LinearDamping: 10
   m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -194,7 +197,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9346919, b: 0.2971698, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
