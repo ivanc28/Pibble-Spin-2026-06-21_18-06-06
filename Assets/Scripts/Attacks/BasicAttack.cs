@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasicAttack : Attack
 {
-    private Collider2D myCollider;
+    private CircleCollider2D myCollider;
     private float hitDuration;
     private float hitActivationTimer;
     private float modifiedDamage;
@@ -19,11 +19,13 @@ public class BasicAttack : Attack
             return;
         }
         Instance = this;
-        myCollider = GetComponent<Collider2D>();
+        myCollider = GetComponent<CircleCollider2D>();
         myCollider.enabled = false;
         hitDuration = 0.1f;
         hitActivationTimer = 0;
         modifiedDamage = damage;
+
+        myCollider.radius = attackRange;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,8 +56,13 @@ public class BasicAttack : Attack
 
     public override void Trigger()
     {
-        myCollider.enabled = true;
-        Debug.Log("activate collider");
+        base.Trigger();
+        if (spinCounter >= spinsPerTrigger)
+        {
+            myCollider.enabled = true;
+            Debug.Log("activate collider");
+            spinCounter = 0;
+        }
     }
     public void ApplyDamageModifier(float damageModifier)
     {

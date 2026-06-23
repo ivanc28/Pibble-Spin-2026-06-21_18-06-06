@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 using TMPro;
 
@@ -23,7 +24,11 @@ public class Player : MonoBehaviour
     private float spinsPerSecond;
     private float attackTriggerTimer;
 
-    public TextMeshProUGUI textComponent; 
+    [SerializeField] List<Attack> availableAttacks = new List<Attack>();
+    private int maxAttacks;
+    // [SerializeField] GameObject[] availableAttacks;
+
+    public TextMeshProUGUI textComponent; // on screen counter for spin charge
 
     private void Awake()
     {
@@ -43,7 +48,9 @@ public class Player : MonoBehaviour
         spinChargeIncreaseRate = data.spinChargeIncreaseRate;
         spinsPerSecond = data.baseSpinsPerSecond;
         attackTriggerTimer = 0;
+        maxAttacks = data.maxAttacks;
         pickupRange = data.basePickupRange;
+        availableAttacks.Add(BasicAttack.Instance);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -82,7 +89,10 @@ public class Player : MonoBehaviour
             spinCharge -= spinChargeDecreaseRate * Time.fixedDeltaTime;
             if (attackTriggerTimer <= 0)
             {
-                BasicAttack.Instance.Trigger();
+                foreach (Attack a in availableAttacks)
+                {
+                    a.Trigger();
+                }
                 attackTriggerTimer = 1/spinsPerSecond;
             }
             else

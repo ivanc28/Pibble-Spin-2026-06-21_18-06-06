@@ -11,6 +11,7 @@ public class PlayerData : ScriptableObject
     public float spinChargeDecreaseRate;
     public float spinChargeIncreaseRate;
     public float baseSpinsPerSecond;
+    public int maxAttacks;
 
     public float basePickupRange;
 }

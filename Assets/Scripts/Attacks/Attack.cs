@@ -5,5 +5,11 @@ using UnityEngine;
 public abstract class Attack : MonoBehaviour
 {
     public float damage;
-    public abstract void Trigger();
+    public int spinsPerTrigger;
+    public int spinCounter;
+    public float attackRange;
+    public virtual void Trigger()
+    {
+        spinCounter += 1;
+    }
 }
