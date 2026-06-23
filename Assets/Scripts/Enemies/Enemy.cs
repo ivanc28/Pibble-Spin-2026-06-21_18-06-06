@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
         {
             //Die();
         }
+        // TESTING ONLY:
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Die();
