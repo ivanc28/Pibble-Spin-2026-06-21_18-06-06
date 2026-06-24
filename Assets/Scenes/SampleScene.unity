@@ -466,92 +466,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6debc03ac884fe8a64f4015aa3e3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
---- !u!1 &784369746
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 784369750}
-  - component: {fileID: 784369748}
-  - component: {fileID: 784369747}
-  m_Layer: 0
-  m_Name: ShurikenAttack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &784369747
+--- !u!114 &784369747 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1489341751398554664, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+  m_PrefabInstance: {fileID: 6797448561074701524}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784369746}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca39f0e188c2f4e8e99c03916edcd480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShurikenAttack
-  damage: 0
-  spinsPerTrigger: 1
-  spinCounter: 0
-  attackRange: 10
-  projectile: {fileID: 902217670}
---- !u!58 &784369748
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784369746}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 5
---- !u!4 &784369750
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784369746}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1655087636}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902217670
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,11 +688,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1655087636 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 874688993755258869, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-  m_PrefabInstance: {fileID: 6797448561074701524}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1373693365566912175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,6 +765,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100004108852112868, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 874688993755258869, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -885,21 +809,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1489341751398554664, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 902217670}
     - target: {fileID: 3010137563829125034, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3698669243039062998, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3698669243039062998, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: attackRange
-      value: 5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: spinsPerTrigger
@@ -935,10 +863,7 @@ PrefabInstance:
       objectReference: {fileID: 727379918}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 874688993755258869, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 784369750}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a295d99c92a541f469b6332ee045f438, type: 3}
 --- !u!1660057539 &9223372036854775807
