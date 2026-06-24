@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerInventory
 {
     private int currency;
-    //private HashSet<Item> items = new(); // hashset used later to store upgrade pickups
+    public HashSet<Upgrade> upgradesClaimed = new();
 
     public void IncreaseCurrency(int amt)
     {
@@ -26,4 +26,19 @@ public class PlayerInventory
     { 
         return currency;
     }
+    public void AddUpgradeToClaimed(Upgrade upgrade)
+    {
+        upgradesClaimed.Add(upgrade);
+    }
+
+    public bool HasClaimedUpgrade(Upgrade upgrade)
+    {
+        return upgradesClaimed.Contains(upgrade);
+    }
+
+    public void ClearUpgrades()
+    {
+        upgradesClaimed.Clear();
+    }
+
 }

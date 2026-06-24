@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private float health;
     private bool canMove;
     private float pickupRange;
-    public static Player Instance { get; set; }
+    public static Player Instance { get; private set; }
 
     private bool isSpinning;
     private float spinCharge;
