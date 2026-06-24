@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public PlayerData data;
     public Rigidbody2D rb;
     public PlayerInventory inventory;
+    public PlayerStats stats;
     private Vector2 moveInput;
     private float health;
     private bool canMove;
@@ -40,6 +41,8 @@ public class Player : MonoBehaviour
         }
         Instance = this;
         inventory = new();
+        stats = new();
+
         health = data.baseHealth;
         canMove = true;
         isSpinning = false;
@@ -121,7 +124,7 @@ public class Player : MonoBehaviour
     {
         // Calculate the direction we want to move in and our desired velocity
         Vector2 normalizedMoveInput = moveInput.normalized;
-        Vector2 targetSpeed = normalizedMoveInput * data.moveSpeed;
+        Vector2 targetSpeed = normalizedMoveInput * data.moveSpeed * stats.moveSpeedMult;
 
         #region Calculate AccelRate
         float accelRate;
@@ -143,7 +146,7 @@ public class Player : MonoBehaviour
 
     public bool ItemInRange(Transform item)
     {
-        return Vector2.Distance(item.position, transform.position) <= pickupRange;
+        return Vector2.Distance(item.position, transform.position) <= pickupRange * stats.pickupRangeMult;
     }
     public void DamagePlayer(float dmg)
     {

@@ -33,11 +33,11 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator DieLogic()
     {
-        SpawnCurrency();
+        SpawnCurrency((int)(data.currencyDropped * Player.Instance.stats.currencyDropMult));
         yield return null;
         Destroy(gameObject);
     }
-    private void SpawnCurrency()
+    private void SpawnCurrency(int amtDropped)
     {
         // Calculate an increment value based on this example: if coins are 1, 5, 10, then we do powers of 3, 9*1 + 3*5 + 1*10 = 34, so incrementValue = 34
         int incrementValue = 0;
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
             {
                 incrementValue += ((int)Mathf.Pow(3, numCoinsTrying - i - 1)) * data.currencyValues[i].currencyAmt;
             }
-            if(incrementValue <= data.currencyDropped)
+            if(incrementValue <= amtDropped)
             {
                 numCoinsUsing = numCoinsTrying;
                 break;
@@ -58,8 +58,8 @@ public class Enemy : MonoBehaviour
                 incrementValue = 0;
             }
         }
-        int startingSpawnCountOfEachCurrency = data.currencyDropped / incrementValue;
-        int remainingCurrency = data.currencyDropped % incrementValue;
+        int startingSpawnCountOfEachCurrency = amtDropped / incrementValue;
+        int remainingCurrency = amtDropped % incrementValue;
         for(int i = 0; i < numCoinsUsing; i++)
         {
             InstantiateCurrency(i, startingSpawnCountOfEachCurrency * ((int)Mathf.Pow(3, numCoinsUsing - i - 1)));
