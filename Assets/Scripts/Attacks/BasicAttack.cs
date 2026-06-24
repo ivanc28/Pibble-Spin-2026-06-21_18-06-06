@@ -30,7 +30,7 @@ public class BasicAttack : Attack
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
-        Basic.Start();
+        base.Start();
         myCollider = GetComponent<CircleCollider2D>();
         myCollider.enabled = false;
         hitDuration = 0.1f;
