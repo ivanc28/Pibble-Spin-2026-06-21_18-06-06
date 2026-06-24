@@ -9,16 +9,28 @@ public class BasicAttack : Attack
     private float hitActivationTimer;
     private float modifiedDamage;
 
-    public static BasicAttack Instance { get; set; }
+    // public static BasicAttack Instance { get; set; }
 
-    private void Awake()
+    // private void Awake()
+    // {
+    //     if(Instance != null && Instance != this)
+    //     {
+    //         Destroy(gameObject);
+    //         return;
+    //     }
+    //     Instance = this;
+    //     myCollider = GetComponent<CircleCollider2D>();
+    //     myCollider.enabled = false;
+    //     hitDuration = 0.1f;
+    //     hitActivationTimer = 0;
+    //     modifiedDamage = damage;
+
+    //     myCollider.radius = attackRange;
+    // }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        if(Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
         myCollider = GetComponent<CircleCollider2D>();
         myCollider.enabled = false;
         hitDuration = 0.1f;
@@ -26,12 +38,6 @@ public class BasicAttack : Attack
         modifiedDamage = damage;
 
         myCollider.radius = attackRange;
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
