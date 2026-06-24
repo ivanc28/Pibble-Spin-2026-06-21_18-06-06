@@ -45,7 +45,8 @@ public class ShurikenAttack : Attack
     private Transform FindNearestTarget()
     {
         // 1. Scan for all colliders inside the detection radius
-        Collider2D[] targetsInRadius = Physics2D.OverlapCircleAll(Player.Instance.transform.position, attackRange, 3);
+        Collider2D[] targetsInRadius = Physics2D.OverlapCircleAll(Player.Instance.transform.position, attackRange, LayerMask.GetMask("Enemy"));
+        Debug.Log(targetsInRadius);
         
         Transform nearestTarget = null;
         float closestDistance = Mathf.Infinity;
@@ -53,9 +54,9 @@ public class ShurikenAttack : Attack
         // 2. Loop through targets to identify the absolute closest one
         foreach (Collider2D targetCollider in targetsInRadius)
         {
-            // Debug.Log("collider");
+            Debug.Log("collider");
+            Debug.Log(targetCollider.transform.position);
             float distanceToTarget = Vector2.Distance(transform.position, targetCollider.transform.position);
-            // Debug.Log(distanceToTarget);
             if (targetCollider.gameObject.CompareTag("Enemy"))
             {
                 Debug.Log("enemy found");

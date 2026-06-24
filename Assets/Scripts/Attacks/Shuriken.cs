@@ -28,6 +28,7 @@ public class Shuriken : MonoBehaviour
         transform.position = Player.Instance.transform.position;
         Vector3 direction = (target - transform.position).normalized;
         rb.linearVelocity = direction * 5;
-        Debug.Log(rb.linearVelocity);
+        Debug.Log("direction");
+        Debug.Log(direction);
     }
 }
