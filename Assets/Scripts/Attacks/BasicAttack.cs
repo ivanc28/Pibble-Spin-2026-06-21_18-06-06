@@ -7,7 +7,6 @@ public class BasicAttack : Attack
     private CircleCollider2D myCollider;
     private float hitDuration;
     private float hitActivationTimer;
-    private float modifiedDamage;
 
     // public static BasicAttack Instance { get; set; }
 
@@ -29,13 +28,13 @@ public class BasicAttack : Attack
     // }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
+        Basic.Start();
         myCollider = GetComponent<CircleCollider2D>();
         myCollider.enabled = false;
         hitDuration = 0.1f;
         hitActivationTimer = 0;
-        modifiedDamage = damage;
 
         myCollider.radius = attackRange;
     }
@@ -70,12 +69,5 @@ public class BasicAttack : Attack
             spinCounter = 0;
         }
     }
-    public void ApplyDamageModifier(float damageModifier)
-    {
-        modifiedDamage = damage * damageModifier;
-    }
-    public float GetDamage()
-    {
-        return modifiedDamage;
-    }
+    
 }

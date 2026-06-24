@@ -8,8 +8,23 @@ public abstract class Attack : MonoBehaviour
     public int spinsPerTrigger;
     public int spinCounter;
     public float attackRange;
+    private float modifiedDamage;
+
+    protected virtual void Start()
+    {
+        modifiedDamage = damage;
+        spinCounter = 0;
+    }
     public virtual void Trigger()
     {
         spinCounter += 1;
+    }
+    public void ApplyDamageModifier(float damageModifier)
+    {
+        modifiedDamage = damage * damageModifier;
+    }
+    public float GetDamage()
+    {
+        return modifiedDamage;
     }
 }
