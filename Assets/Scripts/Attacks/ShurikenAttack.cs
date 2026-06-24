@@ -5,6 +5,8 @@ public class ShurikenAttack : Attack
     private CircleCollider2D myCollider;
     private float modifiedDamage;
     private bool shooting;
+    private Rigidbody2D rb;
+    [SerializeField] GameObject projectile;
 
     // public static ShurikenAttack Instance { get; set; }
 
@@ -27,11 +29,13 @@ public class ShurikenAttack : Attack
     void Start()
     {
         myCollider = GetComponent<CircleCollider2D>();
+        myCollider.radius = attackRange;
         myCollider.enabled = false;
         modifiedDamage = damage;
 
-        myCollider.radius = attackRange;
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -41,7 +45,7 @@ public class ShurikenAttack : Attack
     private Transform FindNearestTarget()
     {
         // 1. Scan for all colliders inside the detection radius
-        Collider2D[] targetsInRadius = Physics2D.OverlapCircleAll(transform.position, attackRange, 3);
+        Collider2D[] targetsInRadius = Physics2D.OverlapCircleAll(Player.Instance.transform.position, attackRange, 3);
         
         Transform nearestTarget = null;
         float closestDistance = Mathf.Infinity;
@@ -52,6 +56,10 @@ public class ShurikenAttack : Attack
             // Debug.Log("collider");
             float distanceToTarget = Vector2.Distance(transform.position, targetCollider.transform.position);
             // Debug.Log(distanceToTarget);
+            if (targetCollider.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("enemy found");
+            }
             
             if (distanceToTarget < closestDistance)
             {
@@ -63,10 +71,6 @@ public class ShurikenAttack : Attack
         // 3. Lock onto the target found
         return nearestTarget;
     }
-    private void ShootAt(Vector2 target)
-    {
-
-    }
 
     public override void Trigger()
     {
@@ -75,8 +79,13 @@ public class ShurikenAttack : Attack
         {
             myCollider.enabled = true;
             Transform target = FindNearestTarget();
-            // Debug.Log("target");
-            // Debug.Log(target.position);
+            GameObject shuriken = Instantiate(projectile, transform.position, transform.rotation, null);
+            Debug.Log("target");
+            Debug.Log(target.position);
+            shuriken.SetActive(true);
+            shuriken.GetComponent<Shuriken>().Init();
+            shuriken.GetComponent<Shuriken>().ShootAt(target.position);
+
             spinCounter = 0;
         }
     }
