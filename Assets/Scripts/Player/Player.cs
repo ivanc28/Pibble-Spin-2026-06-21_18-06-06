@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
     private float spinsPerSecond;
     private float attackTriggerTimer;
 
-    [SerializeField] List<Attack> availableAttacks = new List<Attack>();
+    [SerializeField] List<Attack> allAttacks = new List<Attack>();
+    private List<Attack> availableAttacks = new List<Attack>();
     private int maxAttacks;
     // [SerializeField] GameObject[] availableAttacks;
 
@@ -50,7 +51,8 @@ public class Player : MonoBehaviour
         attackTriggerTimer = 0;
         maxAttacks = data.maxAttacks;
         pickupRange = data.basePickupRange;
-        availableAttacks.Add(BasicAttack.Instance);
+        availableAttacks.Add(allAttacks[0]);
+        availableAttacks.Add(allAttacks[1]);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!canMove)
         {
             return;
