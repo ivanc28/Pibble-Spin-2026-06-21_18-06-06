@@ -95,6 +95,13 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Attack"))
         {
             Debug.Log("enemy hit");
+            if (collision.gameObject.TryGetComponent<Projectile>(out Projectile projectile))
+            {
+                if (!projectile.IsPiercing())
+                {
+                    projectile.EndOfLifespanBehavior();
+                }
+            }
         }
     }
 }
