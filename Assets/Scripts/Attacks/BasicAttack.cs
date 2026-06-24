@@ -55,7 +55,7 @@ public class BasicAttack : Attack
             {
                 hitActivationTimer = 0;
                 myCollider.enabled = false;
-                Debug.Log("deactivate collider");
+                // Debug.Log("deactivate collider");
             }
         }
     }
@@ -66,7 +66,7 @@ public class BasicAttack : Attack
         if (spinCounter >= spinsPerTrigger)
         {
             myCollider.enabled = true;
-            Debug.Log("activate collider");
+            // Debug.Log("activate collider");
             spinCounter = 0;
         }
     }
