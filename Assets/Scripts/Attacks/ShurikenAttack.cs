@@ -3,10 +3,10 @@ using UnityEngine;
 public class ShurikenAttack : Attack
 {
     private CircleCollider2D myCollider;
-    private float modifiedDamage;
     private bool shooting;
     private Rigidbody2D rb;
     [SerializeField] GameObject projectile;
+    // [SerializeField] int projectileCount;
 
     // public static ShurikenAttack Instance { get; set; }
 
@@ -28,11 +28,10 @@ public class ShurikenAttack : Attack
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
+        base.Start();
         myCollider = GetComponent<CircleCollider2D>();
         myCollider.radius = attackRange;
         myCollider.enabled = false;
-        modifiedDamage = damage;
-
     }
 
     
@@ -57,10 +56,10 @@ public class ShurikenAttack : Attack
             Debug.Log("collider");
             Debug.Log(targetCollider.transform.position);
             float distanceToTarget = Vector2.Distance(transform.position, targetCollider.transform.position);
-            if (targetCollider.gameObject.CompareTag("Enemy"))
-            {
-                Debug.Log("enemy found");
-            }
+            // if (targetCollider.gameObject.CompareTag("Enemy"))
+            // {
+            //     Debug.Log("enemy found");
+            // }
             
             if (distanceToTarget < closestDistance)
             {
@@ -80,14 +79,16 @@ public class ShurikenAttack : Attack
         {
             myCollider.enabled = true;
             Transform target = FindNearestTarget();
-            GameObject shuriken = Instantiate(projectile, transform.position, transform.rotation, null);
-            Debug.Log("target");
-            Debug.Log(target.position);
-            shuriken.SetActive(true);
-            shuriken.GetComponent<Shuriken>().Init();
-            shuriken.GetComponent<Shuriken>().ShootAt(target.position);
+            if (target != null)
+            {
+                GameObject shuriken = Instantiate(projectile, transform.position, transform.rotation, null);
+                shuriken.SetActive(true);
+                shuriken.GetComponent<Shuriken>().Init(base.GetDamage());
+                shuriken.GetComponent<Shuriken>().ShootAt(target.position);
 
-            spinCounter = 0;
+                spinCounter = 0;
+            }
+            
         }
     }
 }
