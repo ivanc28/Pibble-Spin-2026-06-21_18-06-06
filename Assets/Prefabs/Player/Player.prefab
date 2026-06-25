@@ -53,7 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   data: {fileID: 11400000, guid: 696d0b743ce4e2b438137baa58d32c21, type: 2}
   rb: {fileID: 4506964756437918224}
-  allAttacks: []
+  allAttacks:
+  - {fileID: 7909701980832889505}
+  - {fileID: 1489341751398554664}
   textComponent: {fileID: 0}
 --- !u!114 &6440207744833231996
 MonoBehaviour:
@@ -446,7 +448,7 @@ MonoBehaviour:
   spinsPerTrigger: 1
   spinCounter: 0
   attackRange: 10
-  projectile: {fileID: 0}
+  projectile: {fileID: 4758842469377898604}
 --- !u!1 &6657041256321577094
 GameObject:
   m_ObjectHideFlags: 0
