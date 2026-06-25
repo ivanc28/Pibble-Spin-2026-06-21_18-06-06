@@ -89,6 +89,10 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!canMove)
+        {
+            return;
+        }
         Move();
         if (isSpinning && spinCharge > 0)
         {
@@ -113,10 +117,10 @@ public class Player : MonoBehaviour
         }
         else if (spinCharge <= maxSpinCharge)
         {
-            spinCharge += spinChargeIncreaseRate * Time.fixedDeltaTime;
-            if (spinCharge > maxSpinCharge)
+            spinCharge += (spinChargeIncreaseRate + stats.spinRechargeRateIncrease) * Time.fixedDeltaTime;
+            if (spinCharge > maxSpinCharge + stats.spinLifetimeIncrease)
             {
-                spinCharge = maxSpinCharge;
+                spinCharge = maxSpinCharge + stats.spinLifetimeIncrease;
             }
         }
     }
@@ -156,5 +160,10 @@ public class Player : MonoBehaviour
     {
         Debug.Log("you ded");
         canMove = false;
+    }
+
+    public List<Attack> GetAvailableAttacks()
+    {
+        return availableAttacks;
     }
 }

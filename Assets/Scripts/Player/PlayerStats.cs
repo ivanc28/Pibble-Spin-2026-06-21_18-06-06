@@ -6,6 +6,8 @@ public class PlayerStats
     public float moveSpeedMult = 1f;
     // Attack
     public float damageMult = 1f;
+    public float spinRechargeRateIncrease = 0f;
+    public float spinLifetimeIncrease = 0f;
     // Survivability
     public float damageReductionMult = 1f;
     public float maxHPMult = 1f;
