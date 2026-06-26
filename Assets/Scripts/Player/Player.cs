@@ -217,4 +217,8 @@ public class Player : MonoBehaviour
     {
         availableAttacks.Add(allAttacks[(int)weapon]);
     }
+    public void IncreaseSpinSpeed(float increase)
+    {
+        spinsPerSecond += increase;
+    }
 }

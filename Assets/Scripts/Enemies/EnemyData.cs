@@ -10,4 +10,5 @@ public class EnemyData : ScriptableObject
     public float killSpinSpeed;
     public int currencyDropped;
     public Currency[] currencyValues;
+    public float spinSpeedIncrease;
 }
