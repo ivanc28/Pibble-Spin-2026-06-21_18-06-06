@@ -2450,6 +2450,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7608506132047455519, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: projectileSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: textComponent
       value: 
@@ -2495,8 +2499,8 @@ MonoBehaviour:
   - {fileID: 3166989030818888025, guid: 119948193534c7b40969f6a05af8d26a, type: 3}
   - {fileID: 3166989030818888025, guid: 0624124f61c6029448ba910cbf3b9d83, type: 3}
   secondsPerSpawn: 2
-  enemiesSpawnedPerBatch: 1
-  secondsPerWave: 5
+  enemiesSpawnedPerBatch: 3
+  secondsPerWave: 30
   waveSpawners:
   - {fileID: 1396146174}
   - {fileID: 268707500}

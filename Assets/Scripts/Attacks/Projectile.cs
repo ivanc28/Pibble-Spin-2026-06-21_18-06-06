@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public Vector3 startPosition;
     public float range;
     public bool piercing;
+    public float projectileSpeed;
     
     public virtual void Init(float modifiedDamage)
     {
@@ -36,7 +37,7 @@ public class Projectile : MonoBehaviour
     public virtual void ShootAt(Vector3 target)
     {
         Vector3 direction = (target - startPosition).normalized;
-        rb.linearVelocity = direction * 10;
+        rb.linearVelocity = direction * projectileSpeed;
         // Debug.Log("direction");
         // Debug.Log(direction);
     }
