@@ -4,7 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Enemy Data", menuName = "ScriptableData/Enemy/Enemy Data")]
 public class EnemyData : ScriptableObject
 {
-    public float moveSpeed;
+    public float minMoveSpeed;
+    public float maxMoveSpeed;
     public float contactDamage;
     public float killSpinSpeed;
     public int currencyDropped;

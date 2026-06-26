@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61af7a21bd8d513498d278e8e1a8c814, type: 3}
   m_Name: Basic Enemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  moveSpeed: 3
+  minMoveSpeed: 4
+  maxMoveSpeed: 5
   contactDamage: 10
-  killSpinSpeed: 3
+  killSpinSpeed: 1000
   currencyDropped: 40
   currencyValues:
   - {fileID: 2361795260253098963, guid: b993cc4f43a16824fbadd1fba3fb807a, type: 3}

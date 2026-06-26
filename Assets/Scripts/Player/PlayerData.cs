@@ -9,6 +9,7 @@ public class PlayerData : ScriptableObject
     public float moveDecelAmount;
     [Header("Health")]
     public float baseHealth;
+    public float iFrameTime;
     [Header("Spinning")]
     public float maxSpinCharge;
     public float spinChargeDecreaseRate;
