@@ -11,53 +11,60 @@ public class SpawnManager : MonoBehaviour
     private float waveTimer;
     [SerializeField] GameObject[] waveSpawners;
     private int difficulty;
+    [SerializeField] int maxEnemyCount;
+    private int currentEnemyCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         spawnTimer = 0;
         enemy = enemyList[0];
         difficulty = 5;
+        currentEnemyCount = 0;
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (spawnTimer >= secondsPerSpawn)
+        if (currentEnemyCount < maxEnemyCount)
         {
-            for (int i = 0; i < enemiesSpawnedPerBatch; i++)
+            if (spawnTimer >= secondsPerSpawn)
             {
-                Vector2 spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
-                while (Vector2.Distance(spawnPoint, Player.Instance.transform.position) < 15)
+                for (int i = 0; i < enemiesSpawnedPerBatch; i++)
                 {
-                    spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
+                    Vector2 spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
+                    while (Vector2.Distance(spawnPoint, Player.Instance.transform.position) < 15)
+                    {
+                        spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
+                    }
+                    Debug.Log(spawnPoint);
+                    GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity);
+                    // Debug.Log(e.transform.position);
+                    // e.transform.position = spawnPoint;
+                    currentEnemyCount += 1;
                 }
-                Debug.Log(spawnPoint);
-                GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity);
-                // Debug.Log(e.transform.position);
-                // e.transform.position = spawnPoint;
                 spawnTimer = 0;
-            }
-        }
-        else
-        {
-            spawnTimer += Time.fixedDeltaTime;
-        }
-
-        if (waveTimer >= secondsPerWave)
-        {
-            if (Random.Range(0,5) < 2)
-            {
-                SpawnCircleWave();
             }
             else
             {
-                SpawnClusterWave();
+                spawnTimer += Time.fixedDeltaTime;
             }
-            waveTimer = 0;
-        }
-        else
-        {
-            waveTimer += Time.fixedDeltaTime;
+
+            if (waveTimer >= secondsPerWave)
+            {
+                if (Random.Range(0,5) < 2)
+                {
+                    SpawnCircleWave();
+                }
+                else
+                {
+                    SpawnClusterWave();
+                }
+                waveTimer = 0;
+            }
+            else
+            {
+                waveTimer += Time.fixedDeltaTime;
+            }
         }
     }
 
@@ -69,6 +76,7 @@ public class SpawnManager : MonoBehaviour
         {
             var spawnPoint = child.position;
             Instantiate(enemy, spawnPoint, Quaternion.identity);
+            currentEnemyCount += 1;
         }
     }
     private void SpawnClusterWave()
@@ -85,6 +93,7 @@ public class SpawnManager : MonoBehaviour
             {
                 var spawnPoint = child.position;
                 Instantiate(enemy, spawnPoint, Quaternion.identity);
+                currentEnemyCount += 1;
             }
         }
     }
