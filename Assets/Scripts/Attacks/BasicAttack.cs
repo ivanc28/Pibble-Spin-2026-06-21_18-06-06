@@ -8,7 +8,7 @@ public class BasicAttack : Attack
     private float hitDuration;
     private float hitActivationTimer;
     [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] Rigidbody2D rb;
+    // [SerializeField] Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -33,7 +33,7 @@ public class BasicAttack : Attack
         if (spriteRenderer.enabled)
         {
             // rb.angularVelocity = 2.0f * Mathf.PI * Player.Instance.GetSpinsPerSecond();
-            rb.angularVelocity = 2.0f * Player.Instance.GetSpinsPerSecond();
+            // rb.angularVelocity = 2.0f * Player.Instance.GetSpinsPerSecond();
         }
         if (myCollider.enabled)
         {
@@ -62,13 +62,13 @@ public class BasicAttack : Attack
     {
         if (activate)
         {
-            rb.angularVelocity = 2.0f * Mathf.PI * Player.Instance.GetSpinsPerSecond();
+            // rb.angularVelocity = 2.0f * Mathf.PI * Player.Instance.GetSpinsPerSecond();
             spriteRenderer.enabled = true;
         }
         else
         {
             spriteRenderer.enabled = false;
-            rb.angularVelocity = 0;
+            // rb.angularVelocity = 0;
         }
     }
 }

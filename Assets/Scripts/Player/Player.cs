@@ -119,7 +119,6 @@ public class Player : MonoBehaviour
         Move();
         if (isSpinning && spinCharge > 0)
         {
-            ((BasicAttack)availableAttacks[0]).Activate(true);
             spinCharge -= spinChargeDecreaseRate * Time.fixedDeltaTime;
             if (attackTriggerTimer <= 0)
             {
@@ -170,6 +169,7 @@ public class Player : MonoBehaviour
     private void ToggleSpin()
     {
         isSpinning = !isSpinning;
+        ((BasicAttack)availableAttacks[0]).Activate(isSpinning);
         Debug.Log(isSpinning);
     }
 

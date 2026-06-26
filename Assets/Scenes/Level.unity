@@ -835,6 +835,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!212 &188861642 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2687620367653721840, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+  m_PrefabInstance: {fileID: 978153970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &217695481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,6 +2557,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3698669243039062998, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698669243039062998, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572386747304013781, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690162336859535483, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7608506132047455519, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: range
       value: 10
@@ -2561,13 +2582,21 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: damage
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: attackRange
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 188861642}
     - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: spinsPerTrigger
       value: 1
