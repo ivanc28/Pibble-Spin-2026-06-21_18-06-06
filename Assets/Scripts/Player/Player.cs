@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public PlayerInventory inventory;
     public PlayerStats stats;
     private Vector2 moveInput;
+    private float maxHealth;
     private float health;
     private bool canMove;
     private float pickupRange;
@@ -43,7 +44,8 @@ public class Player : MonoBehaviour
         inventory = new();
         stats = new();
 
-        health = data.baseHealth;
+        maxHealth = data.baseHealth;
+        ResetHP();
         canMove = true;
         isSpinning = false;
         maxSpinCharge = data.maxSpinCharge;
@@ -89,6 +91,10 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!canMove)
+        {
+            return;
+        }
         Move();
         if (isSpinning && spinCharge > 0)
         {
@@ -113,10 +119,10 @@ public class Player : MonoBehaviour
         }
         else if (spinCharge <= maxSpinCharge)
         {
-            spinCharge += spinChargeIncreaseRate * Time.fixedDeltaTime;
-            if (spinCharge > maxSpinCharge)
+            spinCharge += (spinChargeIncreaseRate + stats.spinRechargeRateIncrease) * Time.fixedDeltaTime;
+            if (spinCharge > maxSpinCharge + stats.spinLifetimeIncrease)
             {
-                spinCharge = maxSpinCharge;
+                spinCharge = maxSpinCharge + stats.spinLifetimeIncrease;
             }
         }
     }
@@ -148,6 +154,23 @@ public class Player : MonoBehaviour
     {
         return Vector2.Distance(item.position, transform.position) <= pickupRange * stats.pickupRangeMult;
     }
+    /// <summary>
+    /// Increases max HP by the proportion, heals the player by how much we increased HP by.
+    /// </summary>
+    /// <param name="proportion"></param>
+    public void IncreaseMaxHPAndHPStat(float proportion)
+    {
+        float oldMaxHealth = maxHealth;
+        stats.maxHPMult += proportion;
+        maxHealth = data.baseHealth * stats.maxHPMult;
+        // Calculate how much max HP was increased by and add that amt to our current health
+        float diff = maxHealth - oldMaxHealth;
+        health += diff;
+    }
+    private void ResetHP()
+    {
+        health = maxHealth;
+    }
     public void DamagePlayer(float dmg)
     {
         health -= dmg;
@@ -156,5 +179,10 @@ public class Player : MonoBehaviour
     {
         Debug.Log("you ded");
         canMove = false;
+    }
+
+    public List<Attack> GetAvailableAttacks()
+    {
+        return availableAttacks;
     }
 }

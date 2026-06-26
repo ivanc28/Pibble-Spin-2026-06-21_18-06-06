@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class MoveSpeedUpgrade : MonoBehaviour
+[CreateAssetMenu(fileName = "Move Speed Upgrade", menuName = "ScriptableData/Upgrades/Move Speed")]
+public class MoveSpeedUpgrade : Upgrade
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Tooltip("Proportion of base move speed increased")]
+    public float moveSpeedMult;
+    public override void Apply(Player player)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player.stats.moveSpeedMult += moveSpeedMult;
     }
 }

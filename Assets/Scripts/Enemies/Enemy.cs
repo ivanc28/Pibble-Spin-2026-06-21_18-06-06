@@ -22,10 +22,10 @@ public class Enemy : MonoBehaviour
             //Die();
         }
         // TESTING ONLY:
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Die();
-        }
+        //if (Mouse.current.leftButton.wasPressedThisFrame)
+        //{
+        //    Die();
+        //}
     }
     private void Die()
     {
