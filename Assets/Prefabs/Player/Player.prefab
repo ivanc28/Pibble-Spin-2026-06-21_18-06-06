@@ -326,6 +326,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   range: 5
   piercing: 0
+  projectileSpeed: 0
 --- !u!58 &5284907985307465389
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -459,8 +460,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3698669243039062998}
   - component: {fileID: 5572386747304013781}
-  - component: {fileID: 100004108852112868}
   - component: {fileID: 7909701980832889505}
+  - component: {fileID: 100004108852112868}
   m_Layer: 0
   m_Name: BasicAttack
   m_TagString: Attack
@@ -542,6 +543,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &7909701980832889505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6657041256321577094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6debc03ac884fe8a64f4015aa3e3b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
+  damage: 1
+  spinsPerTrigger: 0
+  spinCounter: 0
+  attackRange: 0
 --- !u!58 &100004108852112868
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -578,22 +595,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &7909701980832889505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6657041256321577094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6debc03ac884fe8a64f4015aa3e3b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
-  damage: 1
-  spinsPerTrigger: 0
-  spinCounter: 0
-  attackRange: 0
 --- !u!1 &8260049430509852645
 GameObject:
   m_ObjectHideFlags: 0

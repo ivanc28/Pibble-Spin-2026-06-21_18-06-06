@@ -114,7 +114,7 @@ public class Enemy : MonoBehaviour
             {
                 damage = collision.gameObject.GetComponent<Attack>().GetDamage();
             }
-            rb.angularVelocity += damage * 30;
+            rb.AddTorque(damage, ForceMode2D.Impulse);
         }
     }
 }
