@@ -202,6 +202,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("you ded");
         canMove = false;
+        rb.linearVelocity = Vector2.zero;
     }
     private bool ShouldDisableMovement()
     {
