@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = moveDir.normalized * data.moveSpeed;
         if(Mathf.Abs(rb.angularVelocity) >= data.killSpinSpeed)
         {
-            //Die();
+            Die();
         }
         // TESTING ONLY:
         //if (Mouse.current.leftButton.wasPressedThisFrame && !GameManager.Instance.IsPaused)
