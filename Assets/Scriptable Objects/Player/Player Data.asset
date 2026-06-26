@@ -16,9 +16,10 @@ MonoBehaviour:
   moveAccelAmount: 23
   moveDecelAmount: 15
   baseHealth: 100
+  iFrameTime: 0
   maxSpinCharge: 10
   spinChargeDecreaseRate: 1
   spinChargeIncreaseRate: 5
   baseSpinsPerSecond: 1
-  maxAttacks: 0
+  maxAttacks: 2
   basePickupRange: 3

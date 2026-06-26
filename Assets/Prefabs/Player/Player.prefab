@@ -147,6 +147,7 @@ MonoBehaviour:
   allAttacks:
   - {fileID: 7909701980832889505}
   - {fileID: 1489341751398554664}
+  - {fileID: 635242756534996131}
   textComponent: {fileID: 0}
 --- !u!114 &6440207744833231996
 MonoBehaviour:

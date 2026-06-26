@@ -10,6 +10,6 @@ public class WeaponUpgrade : Upgrade
     }
     public override bool IsAvailable()
     {
-        return base.IsAvailable() && Player.Instance.GetAvailableAttacks().Count < 3;
+        return base.IsAvailable() && Player.Instance.GetAvailableAttacks().Count < Player.Instance.data.maxAttacks + 1;
     }
 }
