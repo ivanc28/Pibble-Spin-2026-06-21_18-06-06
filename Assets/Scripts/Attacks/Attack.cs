@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Attack : MonoBehaviour
 {
+    public enum Weapons { Basic, Shuriken, Buzzsaw, Tornado, Revolving_Blade };
+    public Weapons weapon;
     public float damage;
     public int spinsPerTrigger;
     public int spinCounter;
