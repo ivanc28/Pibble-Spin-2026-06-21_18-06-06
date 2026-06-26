@@ -8,12 +8,14 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;
     private float moveSpeed;
+    private int currencyDropped;
     private float spinSpeedIncrease;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // anim = gameObject.GetComponent<Animator>();
         moveSpeed = Random.Range(data.minMoveSpeed, data.maxMoveSpeed);
+        currencyDropped = Random.Range(data.minCurrencyDropped, data.maxCurrencyDropped + 1);
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator DieLogic()
     {
-        SpawnCurrency((int)(data.currencyDropped * Player.Instance.stats.currencyDropMult));
+        SpawnCurrency((int)(currencyDropped * Player.Instance.stats.currencyDropMult));
         yield return null;
         Destroy(gameObject);
     }

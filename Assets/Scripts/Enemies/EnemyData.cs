@@ -8,7 +8,8 @@ public class EnemyData : ScriptableObject
     public float maxMoveSpeed;
     public float contactDamage;
     public float killSpinSpeed;
-    public int currencyDropped;
+    public int minCurrencyDropped;
+    public int maxCurrencyDropped;
     public Currency[] currencyValues;
     public float spinSpeedIncrease;
 }
