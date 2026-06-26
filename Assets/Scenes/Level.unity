@@ -2446,13 +2446,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1489341751398554664, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3010137563829125034, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7608506132047455519, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608506132047455519, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: projectileSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: spinsPerTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: textComponent

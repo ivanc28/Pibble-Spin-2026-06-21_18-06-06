@@ -95,18 +95,26 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Attack"))
         {
-            // if (!anim.GetBool("damaged"))
-            // {
-            //     anim.SetBool("damaged", true);
-            // }
+            if (!anim.GetBool("isDamaged"))
+            {
+                anim.SetBool("isDamaged", true);
+                rb.angularVelocity = 0;
+            }
             Debug.Log("enemy hit");
+            float damage = 0;
             if (collision.gameObject.TryGetComponent<Projectile>(out Projectile projectile))
             {
+                damage = projectile.GetDamage();
                 if (!projectile.IsPiercing())
                 {
                     projectile.EndOfLifespanBehavior();
                 }
             }
+            else
+            {
+                damage = collision.gameObject.GetComponent<Attack>().GetDamage();
+            }
+            rb.angularVelocity += damage * 30;
         }
     }
 }

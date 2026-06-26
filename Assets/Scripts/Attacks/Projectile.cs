@@ -50,4 +50,8 @@ public class Projectile : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    public float GetDamage()
+    {
+        return damage;
+    }
 }
