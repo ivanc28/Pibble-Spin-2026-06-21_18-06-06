@@ -70,6 +70,10 @@ public class Player : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
 
     }
+    public void Spin()
+    {
+        ToggleSpin();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -82,11 +86,11 @@ public class Player : MonoBehaviour
         {
             Die();
         }
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            Debug.Log("Space Key Pressed!");
-            ToggleSpin();
-        }
+        //if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        //{
+        //    Debug.Log("Space Key Pressed!");
+        //    ToggleSpin();
+        //}
         textComponent.text = "charge: " + spinCharge.ToString();
     }
     private void FixedUpdate()
@@ -153,6 +157,10 @@ public class Player : MonoBehaviour
     public bool ItemInRange(Transform item)
     {
         return Vector2.Distance(item.position, transform.position) <= pickupRange * stats.pickupRangeMult;
+    }
+    public bool StructureInRange(Transform structure, float distance)
+    {
+        return Vector2.Distance(structure.position, transform.position) <= distance;
     }
     /// <summary>
     /// Increases max HP by the proportion, heals the player by how much we increased HP by.
