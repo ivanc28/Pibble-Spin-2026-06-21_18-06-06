@@ -11,15 +11,17 @@ public class PlayerInventory
         currency += amt;
         Debug.Log($"New Currency: {currency}");
     }
-    public void SpendCurrency(int amt)
+    public bool SpendCurrency(int amt)
     {
         if(currency - amt >= 0)
         {
             currency -= amt;
+            return true;
         }
         else
         {
             Debug.LogWarning($"Only have {currency} currency but trying to spend {amt}");
+            return false;
         }
     }
     public int GetCurrency() 
