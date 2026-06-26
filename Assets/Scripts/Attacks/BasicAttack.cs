@@ -7,25 +7,8 @@ public class BasicAttack : Attack
     private CircleCollider2D myCollider;
     private float hitDuration;
     private float hitActivationTimer;
-
-    // public static BasicAttack Instance { get; set; }
-
-    // private void Awake()
-    // {
-    //     if(Instance != null && Instance != this)
-    //     {
-    //         Destroy(gameObject);
-    //         return;
-    //     }
-    //     Instance = this;
-    //     myCollider = GetComponent<CircleCollider2D>();
-    //     myCollider.enabled = false;
-    //     hitDuration = 0.1f;
-    //     hitActivationTimer = 0;
-    //     modifiedDamage = damage;
-
-    //     myCollider.radius = attackRange;
-    // }
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -47,6 +30,11 @@ public class BasicAttack : Attack
 
     private void FixedUpdate()
     {
+        if (spriteRenderer.enabled)
+        {
+            // rb.angularVelocity = 2.0f * Mathf.PI * Player.Instance.GetSpinsPerSecond();
+            rb.angularVelocity = 2.0f * Player.Instance.GetSpinsPerSecond();
+        }
         if (myCollider.enabled)
         {
             hitActivationTimer += 1 * Time.fixedDeltaTime;
@@ -70,4 +58,17 @@ public class BasicAttack : Attack
         }
     }
     
+    public void Activate(bool activate)
+    {
+        if (activate)
+        {
+            rb.angularVelocity = 2.0f * Mathf.PI * Player.Instance.GetSpinsPerSecond();
+            spriteRenderer.enabled = true;
+        }
+        else
+        {
+            spriteRenderer.enabled = false;
+            rb.angularVelocity = 0;
+        }
+    }
 }

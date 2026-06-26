@@ -119,6 +119,7 @@ public class Player : MonoBehaviour
         Move();
         if (isSpinning && spinCharge > 0)
         {
+            ((BasicAttack)availableAttacks[0]).Activate(true);
             spinCharge -= spinChargeDecreaseRate * Time.fixedDeltaTime;
             if (attackTriggerTimer <= 0)
             {
@@ -140,6 +141,7 @@ public class Player : MonoBehaviour
         }
         else if (spinCharge <= maxSpinCharge)
         {
+            ((BasicAttack)availableAttacks[0]).Activate(false);
             spinCharge += (spinChargeIncreaseRate + stats.spinRechargeRateIncrease) * Time.fixedDeltaTime;
             if (spinCharge > maxSpinCharge + stats.spinLifetimeIncrease)
             {
@@ -222,5 +224,9 @@ public class Player : MonoBehaviour
     public void IncreaseSpinSpeed(float increase)
     {
         spinsPerSecond += increase;
+    }
+    public float GetSpinsPerSecond()
+    {
+        return spinsPerSecond;
     }
 }

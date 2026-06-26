@@ -17,7 +17,7 @@ MonoBehaviour:
   flavorText: 
   upgradeCategory: 1
   rarityWeight: 25
-  repeatable: 0
+  repeatable: 1
   prerequisiteUpgrade: {fileID: 0}
   sprite: {fileID: 0}
   damageMult: 0.1
