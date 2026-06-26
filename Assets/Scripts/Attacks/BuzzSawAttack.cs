@@ -70,7 +70,6 @@ public class BuzzSawAttack : Attack
 
                 spinCounter = 0;
             }
-            
         }
     }
 }
