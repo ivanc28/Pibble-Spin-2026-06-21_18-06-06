@@ -9,7 +9,7 @@ public class Shrine : MonoBehaviour
 {
     public float interactRange;
     public int numUpgradeOptions;
-    public GameObject upgradeCanvas;
+    public Canvas upgradeCanvas;
     public TextMeshPro costText;
     public UpgradeContainer[] upgradeContainers;
     public GameObject keyIcon;
@@ -21,6 +21,8 @@ public class Shrine : MonoBehaviour
         currencyRequired = currency;
         costText.text = $"Requires {currency}";
         upgradePool = UpgradePool.Instance;
+        upgradeCanvas.worldCamera = Camera.main;
+        upgradeCanvas.sortingLayerName = "UI";
     }
     private void Update()
     {
@@ -38,6 +40,8 @@ public class Shrine : MonoBehaviour
                 if (Player.Instance.inventory.SpendCurrency(currencyRequired))
                 {
                     StartCoroutine(DisplayUpgrades());
+                    costText.enabled = false;
+                    keyIcon.SetActive(false);
                 }
             }
         }
@@ -75,7 +79,15 @@ public class Shrine : MonoBehaviour
     }
     private void EnableUpgradeCanvas(bool enabled)
     {
-        upgradeCanvas.SetActive(enabled);
+        upgradeCanvas.gameObject.SetActive(enabled);
+    }
+
+    public void DisableShrine()
+    {
+        EnableUpgradeCanvas(false);
+        GameManager.Instance.SetGamePaused(false);
+        ShrineSpawner.Instance.SpawnShrine();
+        Destroy(gameObject);
     }
     private void OnDrawGizmos()
     {

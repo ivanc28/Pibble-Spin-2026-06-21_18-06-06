@@ -35,4 +35,9 @@ public class GameManager : MonoBehaviour
         IsPaused = paused;
         Time.timeScale = paused ? 0 : 1;
     }
+
+    public float GetGameTime()
+    {
+        return gameTime;
+    }
 }

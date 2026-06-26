@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
             //Die();
         }
         // TESTING ONLY:
-        //if (Mouse.current.leftButton.wasPressedThisFrame)
+        //if (Mouse.current.leftButton.wasPressedThisFrame && !GameManager.Instance.IsPaused)
         //{
         //    Die();
         //}
