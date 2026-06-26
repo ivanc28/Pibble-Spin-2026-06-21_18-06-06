@@ -66,6 +66,11 @@ public class Shrine : MonoBehaviour
         {
             Upgrade.UpgradeCategory randomCategory = categoryList[UnityEngine.Random.Range(0, categoryList.Count)];
             Upgrade[] upgradesFromRandomCategory = upgradePool.GetUpgradesFromCategory(randomCategory);
+            while(upgradesFromRandomCategory.Length == 0)
+            {
+                randomCategory = categoryList[UnityEngine.Random.Range(0, categoryList.Count)];
+                upgradesFromRandomCategory = upgradePool.GetUpgradesFromCategory(randomCategory);
+            }
             Upgrade randomUpgrade = upgradePool.GetRandomUpgradeFromArray(upgradesFromRandomCategory, true);
             upgradeContainers[i].InitializeContainer(randomUpgrade);
             if (!randomUpgrade.repeatable)
