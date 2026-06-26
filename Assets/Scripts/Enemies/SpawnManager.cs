@@ -31,7 +31,10 @@ public class SpawnManager : MonoBehaviour
                 {
                     spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
                 }
-                Instantiate(enemy, spawnPoint, Quaternion.identity);
+                Debug.Log(spawnPoint);
+                GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity);
+                // Debug.Log(e.transform.position);
+                // e.transform.position = spawnPoint;
                 spawnTimer = 0;
             }
         }

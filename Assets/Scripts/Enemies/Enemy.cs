@@ -6,10 +6,11 @@ public class Enemy : MonoBehaviour
 {
     public EnemyData data;
     public Rigidbody2D rb;
+    public Animator anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        // anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -94,6 +95,10 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Attack"))
         {
+            // if (!anim.GetBool("damaged"))
+            // {
+            //     anim.SetBool("damaged", true);
+            // }
             Debug.Log("enemy hit");
             if (collision.gameObject.TryGetComponent<Projectile>(out Projectile projectile))
             {

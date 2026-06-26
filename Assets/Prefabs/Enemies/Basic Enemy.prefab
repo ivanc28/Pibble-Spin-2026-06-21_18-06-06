@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   data: {fileID: 11400000, guid: ec88c0c87e26ac64c8415ae90c6623d4, type: 2}
   rb: {fileID: 7124752289436083850}
+  anim: {fileID: 7276183484974900745}
 --- !u!50 &7124752289436083850
 Rigidbody2D:
   serializedVersion: 5
@@ -160,13 +161,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7391164182178988935}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.043937624, w: 0.9990343}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7796846793815158206}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.0365}
 --- !u!212 &5054111030451781324
 SpriteRenderer:
   serializedVersion: 2

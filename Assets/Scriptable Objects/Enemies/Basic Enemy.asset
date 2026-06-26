@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   moveSpeed: 3
   contactDamage: 10
-  killSpinSpeed: 0
+  killSpinSpeed: 3
   currencyDropped: 40
   currencyValues:
   - {fileID: 2361795260253098963, guid: b993cc4f43a16824fbadd1fba3fb807a, type: 3}
