@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [Header("Components")]
     public PlayerData data;
     public Rigidbody2D rb;
+    public SpriteRenderer playerRenderer;
+    public Animator anim;
     public PlayerInventory inventory;
     public PlayerStats stats;
     private Vector2 moveInput;
@@ -64,7 +66,7 @@ public class Player : MonoBehaviour
     {
         
     }
-
+    // ---- CALLED BY INPUT SYSTEM -------
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
@@ -74,15 +76,27 @@ public class Player : MonoBehaviour
     {
         ToggleSpin();
     }
+    // -----------------------------------
+
     // Update is called once per frame
     void Update()
     {
-
-        if (!canMove)
+        if (ShouldDisableMovement())
         {
             return;
         }
-        if(health <= 0)
+        #region Animations
+        anim.SetFloat("moveSpeed", rb.linearVelocity.magnitude);
+        if(rb.linearVelocityX > 0)
+        {
+            playerRenderer.flipX = false;
+        }
+        else if (rb.linearVelocityX < 0)
+        {
+            playerRenderer.flipX = true;
+        }
+        #endregion
+        if (health <= 0)
         {
             Die();
         }
@@ -95,7 +109,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!canMove)
+        if (ShouldDisableMovement())
         {
             return;
         }
@@ -188,7 +202,10 @@ public class Player : MonoBehaviour
         Debug.Log("you ded");
         canMove = false;
     }
-
+    private bool ShouldDisableMovement()
+    {
+        return GameManager.Instance.IsPaused || !canMove;
+    }
     public List<Attack> GetAvailableAttacks()
     {
         return availableAttacks;

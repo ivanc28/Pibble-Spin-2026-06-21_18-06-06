@@ -53,6 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   data: {fileID: 11400000, guid: 696d0b743ce4e2b438137baa58d32c21, type: 2}
   rb: {fileID: 4506964756437918224}
+  playerRenderer: {fileID: 5690162336859535483}
+  anim: {fileID: 5238268739937094994}
   allAttacks:
   - {fileID: 7909701980832889505}
   - {fileID: 1489341751398554664}
