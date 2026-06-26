@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;
     private float moveSpeed;
+    private float spinSpeedIncrease;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = moveDir.normalized * moveSpeed;
         if(Mathf.Abs(rb.angularVelocity) >= data.killSpinSpeed)
         {
+            Player.Instance.IncreaseSpinSpeed(data.spinSpeedIncrease);
             Die();
         }
         // TESTING ONLY:
