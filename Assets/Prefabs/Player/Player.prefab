@@ -463,6 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca39f0e188c2f4e8e99c03916edcd480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShurikenAttack
+  weapon: 1
   damage: 0
   spinsPerTrigger: 1
   spinCounter: 0
@@ -573,6 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6debc03ac884fe8a64f4015aa3e3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
+  weapon: 0
   damage: 1
   spinsPerTrigger: 0
   spinCounter: 0

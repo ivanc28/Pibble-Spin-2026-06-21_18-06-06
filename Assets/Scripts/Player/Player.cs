@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private float spinChargeIncreaseRate;
     private float spinsPerSecond;
     private float attackTriggerTimer;
-
+    
     [SerializeField] List<Attack> allAttacks = new List<Attack>();
     private List<Attack> availableAttacks = new List<Attack>();
     private int maxAttacks;
@@ -58,8 +58,9 @@ public class Player : MonoBehaviour
         attackTriggerTimer = 0;
         maxAttacks = data.maxAttacks;
         pickupRange = data.basePickupRange;
+        allAttacks.Sort((x, y) => x.weapon.CompareTo(y.weapon));
         availableAttacks.Add(allAttacks[0]);
-        availableAttacks.Add(allAttacks[1]);
+        //availableAttacks.Add(allAttacks[1]);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -201,6 +202,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("you ded");
         canMove = false;
+        rb.linearVelocity = Vector2.zero;
     }
     private bool ShouldDisableMovement()
     {
@@ -209,5 +211,10 @@ public class Player : MonoBehaviour
     public List<Attack> GetAvailableAttacks()
     {
         return availableAttacks;
+    }
+
+    public void ClaimWeapon(Attack.Weapons weapon)
+    {
+        availableAttacks.Add(allAttacks[(int)weapon]);
     }
 }

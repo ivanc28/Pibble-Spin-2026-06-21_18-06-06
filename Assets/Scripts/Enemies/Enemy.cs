@@ -7,20 +7,22 @@ public class Enemy : MonoBehaviour
     public EnemyData data;
     public Rigidbody2D rb;
     public Animator anim;
+    private float moveSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // anim = gameObject.GetComponent<Animator>();
+        moveSpeed = Random.Range(data.minMoveSpeed, data.maxMoveSpeed);
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 moveDir = Player.Instance.transform.position - transform.position;
-        rb.linearVelocity = moveDir.normalized * data.moveSpeed;
+        rb.linearVelocity = moveDir.normalized * moveSpeed;
         if(Mathf.Abs(rb.angularVelocity) >= data.killSpinSpeed)
         {
-            //Die();
+            Die();
         }
         // TESTING ONLY:
         //if (Mouse.current.leftButton.wasPressedThisFrame && !GameManager.Instance.IsPaused)

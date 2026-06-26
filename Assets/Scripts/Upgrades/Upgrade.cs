@@ -7,7 +7,7 @@ public abstract class Upgrade : ScriptableObject
     public string description;
     [TextArea(2, 2)]
     public string flavorText;
-    public enum UpgradeCategory { Movement, Spin, Survivability, Utility };
+    public enum UpgradeCategory { Movement, Spin, Survivability, Utility, Weapon };
     public UpgradeCategory upgradeCategory;
     public int rarityWeight;
     [Tooltip("Whether this upgrade can be applied again")]
