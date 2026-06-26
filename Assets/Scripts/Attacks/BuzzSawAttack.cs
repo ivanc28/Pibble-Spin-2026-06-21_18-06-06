@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShurikenAttack : Attack
+public class BuzzSawAttack : Attack
 {
     private CircleCollider2D myCollider;
     private bool shooting;
@@ -63,10 +63,10 @@ public class ShurikenAttack : Attack
             Transform target = FindNearestTarget();
             if (target != null)
             {
-                GameObject shuriken = Instantiate(projectile, transform.position, transform.rotation, null);
-                shuriken.SetActive(true);
-                shuriken.GetComponent<Shuriken>().Init(base.GetDamage());
-                shuriken.GetComponent<Shuriken>().ShootAt(target.position);
+                GameObject buzzSaw = Instantiate(projectile, transform.position, transform.rotation, null);
+                buzzSaw.SetActive(true);
+                buzzSaw.GetComponent<BuzzSaw>().Init(base.GetDamage());
+                buzzSaw.GetComponent<BuzzSaw>().ShootAt(target.position);
 
                 spinCounter = 0;
             }

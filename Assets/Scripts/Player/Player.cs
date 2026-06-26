@@ -60,7 +60,9 @@ public class Player : MonoBehaviour
         pickupRange = data.basePickupRange;
         allAttacks.Sort((x, y) => x.weapon.CompareTo(y.weapon));
         availableAttacks.Add(allAttacks[0]);
-        //availableAttacks.Add(allAttacks[1]);
+
+        // availableAttacks.Add(allAttacks[1]);
+        availableAttacks.Add(allAttacks[2]);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
