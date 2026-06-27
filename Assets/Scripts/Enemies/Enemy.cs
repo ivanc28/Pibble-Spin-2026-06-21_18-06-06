@@ -48,14 +48,14 @@ public class Enemy : MonoBehaviour
     }
     private void SpawnCurrency(int amtDropped)
     {
-        // Calculate an increment value based on this example: if coins are 1, 5, 10, then we do powers of 3, 9*1 + 3*5 + 1*10 = 34, so incrementValue = 34
+        // Calculate an increment value based on this example: if coins are 1, 5, 10, then we do powers of 2, 4*1 + 2*5 + 1*10 = 24, so incrementValue = 24
         int incrementValue = 0;
         int numCoinsUsing = data.currencyValues.Length;
         for(int numCoinsTrying = numCoinsUsing;  numCoinsTrying > 0; numCoinsTrying--)
         {
             for (int i = 0; i < numCoinsTrying; i++)
             {
-                incrementValue += ((int)Mathf.Pow(3, numCoinsTrying - i - 1)) * data.currencyValues[i].currencyAmt;
+                incrementValue += ((int)Mathf.Pow(2, numCoinsTrying - i - 1)) * data.currencyValues[i].currencyAmt;
             }
             if(incrementValue <= amtDropped)
             {
@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
         int remainingCurrency = amtDropped % incrementValue;
         for(int i = 0; i < numCoinsUsing; i++)
         {
-            InstantiateCurrency(i, startingSpawnCountOfEachCurrency * ((int)Mathf.Pow(3, numCoinsUsing - i - 1)));
+            InstantiateCurrency(i, startingSpawnCountOfEachCurrency * ((int)Mathf.Pow(2, numCoinsUsing - i - 1)));
         }
 
         // greedy coin change algorithm for remaining currency

@@ -5,6 +5,7 @@ public class PlayerInventory
 {
     private int currency;
     public HashSet<Upgrade> upgradesClaimed = new();
+    private int numUpgradesClaimed;
 
     public void IncreaseCurrency(int amt)
     {
@@ -31,6 +32,7 @@ public class PlayerInventory
     public void AddUpgradeToClaimed(Upgrade upgrade)
     {
         upgradesClaimed.Add(upgrade);
+        numUpgradesClaimed++;
     }
 
     public bool HasClaimedUpgrade(Upgrade upgrade)
@@ -39,7 +41,7 @@ public class PlayerInventory
     }
     public int GetUpgradeCount()
     {
-        return upgradesClaimed.Count;
+        return numUpgradesClaimed;
     }
     public void ClearUpgrades()
     {
