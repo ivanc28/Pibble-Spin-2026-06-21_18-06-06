@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         spinsPerSecond = data.baseSpinsPerSecond;
         attackTriggerTimer = 0;
         maxAttacks = data.maxAttacks;
-        killCount = data.baseKillCountThreshhold;
+        killCountThreshhold = data.baseKillCountThreshhold;
         pickupRange = data.basePickupRange;
         allAttacks.Sort((x, y) => x.weapon.CompareTo(y.weapon));
         availableAttacks.Add(allAttacks[0]);
@@ -118,6 +118,7 @@ public class Player : MonoBehaviour
             killCountLvlUps++;
             killCountThreshhold = CalculateKillCountThreshhold(data.baseKillCountThreshhold, killCountLvlUps, data.killCountCoefficient, data.killCountPower);
             IncreaseSpinSpeed(0.05f);
+            SpawnFadingText();
             killCount = 0;
         }
         #endregion
@@ -144,7 +145,7 @@ public class Player : MonoBehaviour
                 {
                     a.Trigger();
                 }
-                attackTriggerTimer = 1/spinsPerSecond;
+                attackTriggerTimer = 1 / spinsPerSecond;
             }
             else
             {
@@ -153,7 +154,10 @@ public class Player : MonoBehaviour
             if (spinCharge < 0)
             {
                 spinCharge = 0;
-                ToggleSpin();
+                if (isSpinning)
+                {
+                    ToggleSpin();
+                }
             }
         }
         else if (spinCharge <= maxSpinCharge + stats.spinLifetimeIncrease)
@@ -264,5 +268,10 @@ public class Player : MonoBehaviour
     public float GetSpinsPerSecond()
     {
         return spinsPerSecond;
+    }
+
+    private void SpawnFadingText()
+    {
+        Instantiate(data.lvlUpText, transform.position, Quaternion.identity);
     }
 }

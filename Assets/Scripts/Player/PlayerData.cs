@@ -18,6 +18,7 @@ public class PlayerData : ScriptableObject
     public float spinChargeDecreaseRate;
     public float spinChargeIncreaseRate;
     public float baseSpinsPerSecond;
+    public GameObject lvlUpText;
     [Header("Attacks")]
     public int maxAttacks;
     public int baseKillCountThreshhold;

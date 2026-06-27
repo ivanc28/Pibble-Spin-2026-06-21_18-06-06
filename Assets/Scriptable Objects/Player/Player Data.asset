@@ -24,6 +24,7 @@ MonoBehaviour:
   spinChargeDecreaseRate: 1
   spinChargeIncreaseRate: 2
   baseSpinsPerSecond: 1.5
+  lvlUpText: {fileID: 7329279014759573899, guid: 2c30d6c05522ffa4fad971f7208b304c, type: 3}
   maxAttacks: 2
   baseKillCountThreshhold: 10
   killCountCoefficient: 3
