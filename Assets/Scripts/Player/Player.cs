@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public Animator anim;
     public PlayerInventory inventory;
     public PlayerStats stats;
+    public ParticleSystem spinningField;
     private Vector2 moveInput;
     private float maxHealth;
     private float health;
@@ -71,7 +72,7 @@ public class Player : MonoBehaviour
         pickupRange = data.basePickupRange;
         allAttacks.Sort((x, y) => x.weapon.CompareTo(y.weapon));
         availableAttacks.Add(allAttacks[0]);
-
+        spinningField.Stop();
         // availableAttacks.Add(allAttacks[1]);
         //availableAttacks.Add(allAttacks[4]);
     }
@@ -222,8 +223,16 @@ public class Player : MonoBehaviour
     private void ToggleSpin()
     {
         isSpinning = !isSpinning;
+        if (!isSpinning)
+        {
+            spinningField.Stop();
+        }
+        else
+        {
+            spinningField.Play();
+        }
         ((BasicAttack)availableAttacks[0]).Activate(isSpinning);
-        Debug.Log(isSpinning);
+        //Debug.Log(isSpinning);
     }
 
     public bool ItemInRange(Transform item)
