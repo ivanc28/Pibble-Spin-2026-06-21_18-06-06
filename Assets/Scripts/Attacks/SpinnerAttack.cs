@@ -63,7 +63,7 @@ public class SpinnerAttack : Attack
         if (activate)
         {
             // transform.position = Player.Instance.transform.position;
-            rb.AddTorque(-1 * Mathf.PI * Player.Instance.GetSpinsPerSecond(), ForceMode2D.Impulse);
+            rb.AddTorque((-1 * Player.Instance.GetSpinsPerSecond() / 2) - 1, ForceMode2D.Impulse);
             spriteRenderer.enabled = true;
             
             foreach (Transform child in transform)
