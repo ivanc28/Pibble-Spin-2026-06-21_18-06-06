@@ -654,17 +654,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &107480190 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4237793628699170047, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-  m_PrefabInstance: {fileID: 978153970}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 307f04387a2ef484595803a506e91c1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TornadoAttack
 --- !u!1 &115519751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,17 +1511,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &592271534 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 635242756534996131, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-  m_PrefabInstance: {fileID: 978153970}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99fb804174b284fae93693c21a8d8bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuzzSawAttack
 --- !u!1 &736376672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,26 +2560,6 @@ PrefabInstance:
       propertyPath: textComponent
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-      propertyPath: allAttacks.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-      propertyPath: 'allAttacks.Array.data[0]'
-      value: 
-      objectReference: {fileID: 978153971}
-    - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-      propertyPath: 'allAttacks.Array.data[2]'
-      value: 
-      objectReference: {fileID: 592271534}
-    - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-      propertyPath: 'allAttacks.Array.data[3]'
-      value: 
-      objectReference: {fileID: 107480190}
-    - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-      propertyPath: 'allAttacks.Array.data[4]'
-      value: 
-      objectReference: {fileID: 1267009207}
     - target: {fileID: 8158829151715819901, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: range
       value: 20
@@ -2632,6 +2590,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9098281570918576588, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098281570918576592, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098281570918576592, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_ConnectedAnchor.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9098281570918576592, guid: a295d99c92a541f469b6332ee045f438, type: 3}
@@ -2667,17 +2633,6 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 284931391}
   m_SourcePrefab: {fileID: 100100000, guid: a295d99c92a541f469b6332ee045f438, type: 3}
---- !u!114 &978153971 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9098281570918576589, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-  m_PrefabInstance: {fileID: 978153970}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6debc03ac884fe8a64f4015aa3e3b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
 --- !u!1 &981278419
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,17 +3056,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5698140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1267009207 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 665859801284262807, guid: a295d99c92a541f469b6332ee045f438, type: 3}
-  m_PrefabInstance: {fileID: 978153970}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048159653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3be1dcfcc834847b04102f47a4805b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpinnerAttack
 --- !u!1 &1269952060
 GameObject:
   m_ObjectHideFlags: 0
