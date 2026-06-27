@@ -12,4 +12,7 @@ public class EnemyData : ScriptableObject
     public int maxCurrencyDropped;
     public Currency[] currencyValues;
     public float spinSpeedIncrease;
+    [Header("SFX")]
+    public AudioClip[] squeakClips;
+    public AudioClip[] killClip;
 }

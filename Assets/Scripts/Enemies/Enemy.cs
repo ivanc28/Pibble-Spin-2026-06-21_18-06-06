@@ -53,6 +53,10 @@ public class Enemy : MonoBehaviour
         transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(-1);
         Player.Instance.IncrementKillCount();
         SpawnCurrency((int)(currencyDropped * Player.Instance.stats.currencyDropMult));
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.killClip, 0.4f, true);
+        }
         yield return null;
         Destroy(gameObject);
     }
@@ -118,7 +122,7 @@ public class Enemy : MonoBehaviour
                 anim.SetBool("isDamaged", true);
                 rb.angularVelocity = 0;
             }
-            Debug.Log("enemy hit");
+            //Debug.Log("enemy hit");
             float damage = 0;
             if (collision.gameObject.TryGetComponent<Projectile>(out Projectile projectile))
             {
@@ -131,6 +135,15 @@ public class Enemy : MonoBehaviour
             else
             {
                 damage = collision.gameObject.GetComponent<Attack>().GetDamage();
+            }
+            float predictedAngularVelocity = Mathf.Abs(rb.angularVelocity) + damage / rb.inertia * Mathf.Rad2Deg;
+            Debug.Log($"Predicted angular vel is {predictedAngularVelocity} and threshhold is {data.killSpinSpeed}");
+            if (Mathf.Abs(predictedAngularVelocity) < data.killSpinSpeed)
+            {
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySound(data.squeakClips, 0.4f, true);
+                }
             }
             rb.AddTorque(damage, ForceMode2D.Impulse);
         }
