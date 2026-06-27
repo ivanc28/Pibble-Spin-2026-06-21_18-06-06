@@ -2053,7 +2053,7 @@ MonoBehaviour:
   waveSpawners:
   - {fileID: 1396146174}
   - {fileID: 268707500}
-  maxEnemyCount: 100
+  maxEnemyCount: 50
 --- !u!4 &981278421
 Transform:
   m_ObjectHideFlags: 0

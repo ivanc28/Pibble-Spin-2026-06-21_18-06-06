@@ -60,6 +60,7 @@ public class UIManager : MonoBehaviour
     }
     public void ResetButton()
     {
+        GameManager.Instance.SetGamePaused(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
