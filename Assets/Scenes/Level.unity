@@ -1964,6 +1964,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3518979246415999964, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528468672103780480, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3698669243039062998, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1982,6 +1990,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4758842469377898604, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974634192275501404, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5572386747304013781, guid: a295d99c92a541f469b6332ee045f438, type: 3}
@@ -2019,6 +2031,18 @@ PrefabInstance:
     - target: {fileID: 7701377323021479128, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_Radius
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899709360202113446, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899709360202113446, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899709360202113446, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7909701980832889505, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: rb
@@ -2060,6 +2084,10 @@ PrefabInstance:
       propertyPath: 'allAttacks.Array.data[4]'
       value: 
       objectReference: {fileID: 1267009207}
+    - target: {fileID: 8306449321258609435, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8637695780826878559, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_IsActive
       value: 0
