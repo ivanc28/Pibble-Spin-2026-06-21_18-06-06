@@ -36,8 +36,6 @@ public class Player : MonoBehaviour
     private int maxAttacks;
     // [SerializeField] GameObject[] availableAttacks;
 
-    public TextMeshProUGUI textComponent; // on screen counter for spin charge
-
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -123,7 +121,7 @@ public class Player : MonoBehaviour
         //    Debug.Log("Space Key Pressed!");
         //    ToggleSpin();
         //}
-        textComponent.text = "charge: " + spinCharge.ToString();
+
     }
     private void FixedUpdate()
     {
@@ -231,7 +229,10 @@ public class Player : MonoBehaviour
     {
         return availableAttacks;
     }
-
+    public float GetHealth() { return health; }
+    public float GetMaxHealth() { return maxHealth; }
+    public float GetSpinCharge() {  return spinCharge; }
+    public float GetMaxSpinCharge() { return maxSpinCharge + stats.spinLifetimeIncrease;  }
     public void ClaimWeapon(Attack.Weapons weapon)
     {
         availableAttacks.Add(allAttacks[(int)weapon]);

@@ -35,8 +35,8 @@ public class BuzzSawAttack : Attack
         // 2. Loop through targets to identify the absolute closest one
         foreach (Collider2D targetCollider in targetsInRadius)
         {
-            Debug.Log("collider");
-            Debug.Log(targetCollider.transform.position);
+            //Debug.Log("collider");
+            //Debug.Log(targetCollider.transform.position);
             float distanceToTarget = Vector2.Distance(transform.position, targetCollider.transform.position);
             // if (targetCollider.gameObject.CompareTag("Enemy"))
             // {
