@@ -142,7 +142,7 @@ public class Enemy : MonoBehaviour
             {
                 if (SoundManager.Instance != null)
                 {
-                    SoundManager.Instance.PlaySound(data.squeakClips, 0.4f, true);
+                    SoundManager.Instance.PlaySound(data.squeakClips, 0.3f, true);
                 }
             }
             rb.AddTorque(damage, ForceMode2D.Impulse);
