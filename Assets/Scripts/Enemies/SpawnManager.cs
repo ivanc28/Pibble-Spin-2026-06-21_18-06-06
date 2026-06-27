@@ -16,9 +16,9 @@ public class SpawnManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spawnTimer = 0;
+        spawnTimer = secondsPerSpawn;
         enemy = enemyList[0];
-        difficulty = 5;
+        difficulty = 1;
         currentEnemyCount = 0;
     }
 
@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
         {
             if (spawnTimer >= secondsPerSpawn)
             {
-                for (int i = 0; i < enemiesSpawnedPerBatch; i++)
+                for (int i = 0; i < enemiesSpawnedPerBatch * difficulty; i++)
                 {
                     Vector2 spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
                     while (Vector2.Distance(spawnPoint, Player.Instance.transform.position) < 15)
@@ -37,10 +37,9 @@ public class SpawnManager : MonoBehaviour
                         spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
                     }
                     Debug.Log(spawnPoint);
-                    GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity);
+                    GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
                     // Debug.Log(e.transform.position);
                     // e.transform.position = spawnPoint;
-                    currentEnemyCount += 1;
                 }
                 spawnTimer = 0;
             }
@@ -75,8 +74,7 @@ public class SpawnManager : MonoBehaviour
         foreach (Transform child in wave.transform)
         {
             var spawnPoint = child.position;
-            Instantiate(enemy, spawnPoint, Quaternion.identity);
-            currentEnemyCount += 1;
+            Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
         }
     }
     private void SpawnClusterWave()
@@ -92,9 +90,13 @@ public class SpawnManager : MonoBehaviour
             foreach (Transform child in wave.transform)
             {
                 var spawnPoint = child.position;
-                Instantiate(enemy, spawnPoint, Quaternion.identity);
-                currentEnemyCount += 1;
+                Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
             }
         }
+    }
+
+    public void IncrementEnemyCount(int num)
+    {
+        currentEnemyCount += num;
     }
 }

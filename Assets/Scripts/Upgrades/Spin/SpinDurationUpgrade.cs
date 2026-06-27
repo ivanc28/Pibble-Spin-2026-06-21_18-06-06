@@ -7,5 +7,6 @@ public class SpinDurationUpgrade : Upgrade
     public override void Apply(Player player)
     {
         player.stats.spinLifetimeIncrease += additionalSpinTime;
+        Debug.Log(additionalSpinTime);
     }
 }
