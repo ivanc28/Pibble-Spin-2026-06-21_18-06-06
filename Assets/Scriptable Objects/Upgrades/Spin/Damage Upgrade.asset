@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Damage Upgrade
   m_EditorClassIdentifier: Assembly-CSharp::DamageUpgrade
   upgradeName: Cat So Sharp
-  description: Increases damage of all attacks by 10%
+  description: Increases damage of all attacks by 20%
   flavorText: 
   upgradeCategory: 1
-  rarityWeight: 25
+  rarityWeight: 30
   repeatable: 1
   prerequisiteUpgrade: {fileID: 0}
   sprite: {fileID: 0}
-  damageMult: 0.1
+  damageMult: 0.2

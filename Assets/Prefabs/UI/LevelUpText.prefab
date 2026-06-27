@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadingText
   fadeTime: 0.5
-  moveSpeed: 2
+  moveSpeed: 1
   delayBeforeFade: 1
 --- !u!23 &5299977572509946190
 MeshRenderer:

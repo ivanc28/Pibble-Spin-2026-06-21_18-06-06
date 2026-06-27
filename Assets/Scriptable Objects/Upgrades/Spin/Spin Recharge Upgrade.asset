@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Increases the Spin recovery time by 0.5 per second
   flavorText: 
   upgradeCategory: 1
-  rarityWeight: 30
+  rarityWeight: 20
   repeatable: 1
   prerequisiteUpgrade: {fileID: 0}
   sprite: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   minMoveSpeed: 4
   maxMoveSpeed: 5
-  contactDamage: 10
+  contactDamage: 15
   killSpinSpeed: 1000
   minCurrencyDropped: 6
   maxCurrencyDropped: 10

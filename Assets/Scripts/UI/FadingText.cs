@@ -26,6 +26,7 @@ public class FadingText : MonoBehaviour
         {
             timer += Time.deltaTime;
             text.color = Color.Lerp(originalColor, Color.clear, timer / fadeTime);
+            yield return null;
         }
         Destroy(gameObject);
     }

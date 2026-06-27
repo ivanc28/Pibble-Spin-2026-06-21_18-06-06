@@ -69,6 +69,10 @@ public class TornadoAttack : Attack
                 tornado.GetComponent<Tornado>().ShootAt(target.position);
 
                 spinCounter = 0;
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySound(Player.Instance.data.heavyWhooshClips, 0.4f, true, 0.9f, 1.1f);
+                }
             }
         }
     }

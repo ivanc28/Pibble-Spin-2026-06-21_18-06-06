@@ -31,4 +31,5 @@ public class PlayerData : ScriptableObject
     [Header("Sound Effects")]
     public AudioClip[] whooshClips;
     public AudioClip[] shingClips;
+    public AudioClip[] heavyWhooshClips;
 }

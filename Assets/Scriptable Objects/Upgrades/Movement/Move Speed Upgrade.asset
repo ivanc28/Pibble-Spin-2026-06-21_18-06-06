@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Move Speed Upgrade
   m_EditorClassIdentifier: Assembly-CSharp::MoveSpeedUpgrade
   upgradeName: Speedy Cat
-  description: Increases movement speed by 10%
+  description: Increases movement speed by 15%
   flavorText: 
   upgradeCategory: 0
   rarityWeight: 40
   repeatable: 1
   prerequisiteUpgrade: {fileID: 0}
   sprite: {fileID: 0}
-  moveSpeedMult: 0.1
+  moveSpeedMult: 0.15

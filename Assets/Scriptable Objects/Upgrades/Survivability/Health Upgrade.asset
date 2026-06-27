@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Health Upgrade
   m_EditorClassIdentifier: Assembly-CSharp::HealthUpgrade
   upgradeName: Cat With 10 Lives
-  description: Increases max health by 15%
+  description: Increases max health by 20%
   flavorText: 
   upgradeCategory: 2
   rarityWeight: 30
   repeatable: 1
   prerequisiteUpgrade: {fileID: 0}
   sprite: {fileID: 0}
-  maxHealthMult: 0.15
+  maxHealthMult: 0.2

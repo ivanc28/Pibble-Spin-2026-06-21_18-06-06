@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spinner Upgrade
   m_EditorClassIdentifier: Assembly-CSharp::WeaponUpgrade
   upgradeName: Fidget Spinner
-  description: Spin Fidget Spinner to spin nearby pibbles, making them spin more
+  description: Spin Fidget Spinners to spin nearby pibbles, making them spin more
   flavorText: 
   upgradeCategory: 4
   rarityWeight: 20
