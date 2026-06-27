@@ -15,6 +15,9 @@ MonoBehaviour:
   moveSpeed: 6
   moveAccelAmount: 23
   moveDecelAmount: 15
+  spinningAccelAmount: 5
+  spinningDecelAmount: 3
+  spinningMoveSpeedFactor: 1.75
   baseHealth: 100
   iFrameTime: 0
   maxSpinCharge: 5
