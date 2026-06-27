@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61af7a21bd8d513498d278e8e1a8c814, type: 3}
+  m_Name: Tough Enemy
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  minMoveSpeed: 2
+  maxMoveSpeed: 3
+  contactDamage: 10
+  killSpinSpeed: 1500
+  minCurrencyDropped: 6
+  maxCurrencyDropped: 10
+  currencyValues:
+  - {fileID: 2361795260253098963, guid: b993cc4f43a16824fbadd1fba3fb807a, type: 3}
+  - {fileID: 2361795260253098963, guid: 1e32ba739f2546742ba2b0a95a4621fb, type: 3}
+  - {fileID: 2361795260253098963, guid: 39b49f89ce856014c9d941699cd99fb5, type: 3}
+  spinSpeedIncrease: 0
+  squeakClips: []
+  killClip: []
