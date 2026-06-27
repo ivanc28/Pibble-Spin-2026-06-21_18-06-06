@@ -59,7 +59,7 @@ public class BasicAttack : Attack
     {
         if (activate)
         {
-            rb.AddTorque(Player.Instance.GetSpinsPerSecond(), ForceMode2D.Impulse);
+            rb.AddTorque(Player.Instance.GetSpinsPerSecond() * 1.5f, ForceMode2D.Impulse);
             spriteRenderer.enabled = true;
         }
         else
