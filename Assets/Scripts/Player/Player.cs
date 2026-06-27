@@ -105,11 +105,11 @@ public class Player : MonoBehaviour
         anim.SetFloat("moveSpeed", rb.linearVelocity.magnitude);
         if(rb.linearVelocityX > 0)
         {
-            playerRenderer.flipX = true;
+            playerRenderer.flipX = false;
         }
         else if (rb.linearVelocityX < 0)
         {
-            playerRenderer.flipX = false;
+            playerRenderer.flipX = true;
         }
         #endregion
         #region Death
