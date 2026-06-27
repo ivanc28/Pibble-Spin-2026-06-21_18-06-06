@@ -51,8 +51,6 @@ public class SpawnManager : MonoBehaviour
 
             if (waveTimer >= secondsPerWave)
             {
-                difficulty += 1;
-                secondsPerSpawn -= 0.5f;
                 if (Random.Range(0,5) < 2)
                 {
                     SpawnCircleWave();
@@ -62,6 +60,8 @@ public class SpawnManager : MonoBehaviour
                     SpawnClusterWave();
                 }
                 waveTimer = 0;
+                difficulty += 1;
+                secondsPerSpawn -= 0.1f;
             }
             else
             {
