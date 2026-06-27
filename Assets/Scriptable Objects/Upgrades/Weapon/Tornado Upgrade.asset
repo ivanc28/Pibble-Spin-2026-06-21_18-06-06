@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7baf0d97658892c4381ca3a59be14a84, type: 3}
-  m_Name: Shuriken Upgrade
+  m_Name: Tornado Upgrade
   m_EditorClassIdentifier: Assembly-CSharp::WeaponUpgrade
-  upgradeName: Shuriken
-  description: Shoot Shurikens at nearby pibbles
+  upgradeName: Tornado
+  description: Shoot Tornadoes at nearby pibbles, making them spin while inside
   flavorText: 
   upgradeCategory: 4
-  rarityWeight: 30
+  rarityWeight: 20
   repeatable: 0
   prerequisiteUpgrade: {fileID: 0}
   sprite: {fileID: 0}
-  weapon: 1
+  weapon: 3

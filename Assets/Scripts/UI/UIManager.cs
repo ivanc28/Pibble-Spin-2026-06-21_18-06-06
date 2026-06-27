@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
     public Slider healthBar;
     public Slider spinChargeBar;
     public TextMeshProUGUI currencyText;
+    public TextMeshProUGUI clockText;
+
     public static UIManager Instance;
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class UIManager : MonoBehaviour
         UpdateHealthBar();
         UpdateSpinBar();
         UpdateCurrency();
+        UpdateGameClock();
     }
 
     private void UpdateHealthBar()
@@ -42,5 +45,9 @@ public class UIManager : MonoBehaviour
     private void UpdateCurrency()
     {
         currencyText.text = Player.Instance.inventory.GetCurrency().ToString();
+    }
+    private void UpdateGameClock()
+    {
+        clockText.text = GameManager.Instance.GetGameTime().ToString("0");
     }
 }

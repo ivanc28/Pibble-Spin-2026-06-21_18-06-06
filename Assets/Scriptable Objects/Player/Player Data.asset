@@ -19,8 +19,9 @@ MonoBehaviour:
   spinningDecelAmount: 3
   spinningMoveSpeedFactor: 1.75
   baseHealth: 100
-  iFrameTime: 0
   baseHealthRegen: 2
+  iFrameTime: 1
+  iFrameFlashRate: 0.2
   maxSpinCharge: 5
   spinChargeDecreaseRate: 1
   spinChargeIncreaseRate: 2
