@@ -1162,52 +1162,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &435073357
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 435073359}
-  - component: {fileID: 435073358}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &435073358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435073357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f3124b5010f204db02ddcbbfb1752d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  sfxGroup: {fileID: 0}
-  audioSourcePoolSize: 15
---- !u!4 &435073359
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435073357}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.22359, y: 6.04472, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565010434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,9 +1910,25 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2687620367653721840, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2687620367653721840, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3010137563829125034, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102932177354586147, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102932177354586147, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3698669243039062998, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_LocalScale.x
@@ -1970,15 +1940,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4237793628699170047, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: damage
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4237793628699170047, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: spinsPerTrigger
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4758842469377898604, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007505771922511957, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5572386747304013781, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_SortingOrder
@@ -2042,7 +2016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: allAttacks.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: 'allAttacks.Array.data[2]'
@@ -2052,6 +2026,10 @@ PrefabInstance:
       propertyPath: 'allAttacks.Array.data[3]'
       value: 
       objectReference: {fileID: 107480190}
+    - target: {fileID: 8153254275279726961, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: 'allAttacks.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1788079194}
     - target: {fileID: 8637695780826878559, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2099,7 +2077,7 @@ MonoBehaviour:
   waveSpawners:
   - {fileID: 1396146174}
   - {fileID: 268707500}
-  maxEnemyCount: 50
+  maxEnemyCount: 100
   currentEnemyCount: 0
 --- !u!4 &981278421
 Transform:
@@ -3444,6 +3422,17 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2876905172233749727, guid: a295d99c92a541f469b6332ee045f438, type: 3}
   m_PrefabInstance: {fileID: 978153970}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1788079194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 665859801284262807, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+  m_PrefabInstance: {fileID: 978153970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3be1dcfcc834847b04102f47a4805b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpinnerAttack
 --- !u!1 &1957675631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,4 +4068,3 @@ SceneRoots:
   - {fileID: 40834671}
   - {fileID: 2141644541}
   - {fileID: 1313561721}
-  - {fileID: 435073359}
