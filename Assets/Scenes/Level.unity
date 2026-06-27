@@ -2626,6 +2626,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'BasicAttack '
       objectReference: {fileID: 0}
+    - target: {fileID: 9098281570918576588, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098281570918576588, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098281570918576592, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 1024136417}
     m_RemovedComponents:
     - {fileID: 4974634192275501404, guid: a295d99c92a541f469b6332ee045f438, type: 3}
     - {fileID: 3528468672103780480, guid: a295d99c92a541f469b6332ee045f438, type: 3}
