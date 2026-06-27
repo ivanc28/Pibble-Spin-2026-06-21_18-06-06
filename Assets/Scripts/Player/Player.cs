@@ -318,6 +318,7 @@ public class Player : MonoBehaviour
     public void IncrementKillCount()
     {
         killCount++;
+        Debug.Log($"Kill count is now {killCount} and we need {killCountThreshhold} to next level");
     }
 
     private int CalculateKillCountThreshhold(int baseThreshhold, int level, float coefficient, float power)

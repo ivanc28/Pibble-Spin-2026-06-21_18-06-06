@@ -28,8 +28,6 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = moveDir.normalized * moveSpeed;
         if(Mathf.Abs(rb.angularVelocity) >= data.killSpinSpeed)
         {
-            transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(-1);
-            Player.Instance.IncrementKillCount();
             Die();
         }
         // TESTING ONLY:
@@ -52,6 +50,8 @@ public class Enemy : MonoBehaviour
             yield break;
         }
         isDead = true;
+        transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(-1);
+        Player.Instance.IncrementKillCount();
         SpawnCurrency((int)(currencyDropped * Player.Instance.stats.currencyDropMult));
         yield return null;
         Destroy(gameObject);
@@ -98,7 +98,6 @@ public class Enemy : MonoBehaviour
 
     private void InstantiateCurrency(int index, int numTimes)
     {
-        Debug.Log($"Spawning {numTimes}x coin[{index}] (value {data.currencyValues[index].currencyAmt})");
         for (int i = 0; i < numTimes; i++)
         {
             Currency currency = Instantiate(data.currencyValues[index], transform.position, Quaternion.identity);
