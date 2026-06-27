@@ -8,8 +8,8 @@ public class ShrineSpawner : MonoBehaviour
     public float minSpawnDistanceFromOtherEntities;
     [Header("Shrine Cost")]
     public float baseShrineCost;
-    [Tooltip("How many seconds of game time must pass before increasing shrine cost")]
-    public float shrineCostIncreaseRate;
+    //[Tooltip("How many seconds of game time must pass before increasing shrine cost")]
+    //public float shrineCostIncreaseRate;
     [Tooltip("Coefficient of cost increase formula")]
     public float shrineCostIncreaseAmount;
     [Tooltip("Power of cost increase formula")]

@@ -69,6 +69,10 @@ public class BuzzSawAttack : Attack
                 buzzSaw.GetComponent<BuzzSaw>().ShootAt(target.position);
 
                 spinCounter = 0;
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySound(Player.Instance.data.whooshClips, 0.4f, true, 0.9f, 1.1f);
+                }
             }
         }
     }

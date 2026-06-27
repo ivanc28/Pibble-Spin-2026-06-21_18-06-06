@@ -28,4 +28,7 @@ public class PlayerData : ScriptableObject
     public float killCountPower;
     [Header("Utility")]
     public float basePickupRange;
+    [Header("Sound Effects")]
+    public AudioClip[] whooshClips;
+    public AudioClip[] shingClips;
 }
