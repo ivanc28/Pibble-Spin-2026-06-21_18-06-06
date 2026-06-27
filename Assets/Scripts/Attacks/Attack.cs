@@ -21,7 +21,7 @@ public abstract class Attack : MonoBehaviour
     {
         spinCounter += 1;
     }
-    public void ApplyDamageModifier(float damageModifier)
+    public virtual void ApplyDamageModifier(float damageModifier)
     {
         modifiedDamage = damage * damageModifier;
     }
