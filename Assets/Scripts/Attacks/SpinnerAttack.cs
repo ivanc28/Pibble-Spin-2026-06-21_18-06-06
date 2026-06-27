@@ -16,6 +16,11 @@ public class SpinnerAttack : Attack
         base.Start();
         hitDuration = 4f;
         hitActivationTimer = 0;
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<Spinner>().damage = damage;
+            child.GetComponent<Spinner>().ApplyDamageModifier(1);
+        }
     }
 
     // Update is called once per frame
@@ -28,7 +33,7 @@ public class SpinnerAttack : Attack
     {
         if (spriteRenderer.enabled)
         {
-            transform.position = Player.Instance.transform.position;
+            // transform.position = Player.Instance.transform.position;
             hitActivationTimer += Time.fixedDeltaTime;
             if (hitActivationTimer >= hitDuration)
             {
@@ -57,7 +62,8 @@ public class SpinnerAttack : Attack
     {
         if (activate)
         {
-            rb.angularVelocity = 500;
+            // transform.position = Player.Instance.transform.position;
+            rb.AddTorque(2, ForceMode2D.Impulse);
             spriteRenderer.enabled = true;
             
             foreach (Transform child in transform)
@@ -75,6 +81,14 @@ public class SpinnerAttack : Attack
                 child.GetComponent<Collider2D>().enabled = false;
                 child.GetComponent<SpriteRenderer>().enabled = false;
             }
+        }
+    }
+
+    public override void ApplyDamageModifier(float damageModifier)
+    {
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<Spinner>().ApplyDamageModifier(damageModifier);
         }
     }
 }
