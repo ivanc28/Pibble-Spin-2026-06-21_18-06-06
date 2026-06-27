@@ -1882,11 +1882,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 635242756534996131, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: damage
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 635242756534996131, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: spinsPerTrigger
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 665859801284262807, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 874688993755258869, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1970,11 +1974,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4237793628699170047, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: damage
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4237793628699170047, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: spinsPerTrigger
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4758842469377898604, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_IsActive
