@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     private float health;
     private bool canMove;
     private float pickupRange;
+    private int killCount;
+    private int killCountThreshhold;
+    private int killCountLvlUps;
     public static Player Instance { get; private set; }
 
     private bool isSpinning;
@@ -57,6 +60,7 @@ public class Player : MonoBehaviour
         spinsPerSecond = data.baseSpinsPerSecond;
         attackTriggerTimer = 0;
         maxAttacks = data.maxAttacks;
+        killCount = data.baseKillCountThreshhold;
         pickupRange = data.basePickupRange;
         allAttacks.Sort((x, y) => x.weapon.CompareTo(y.weapon));
         availableAttacks.Add(allAttacks[0]);
@@ -99,10 +103,21 @@ public class Player : MonoBehaviour
             playerRenderer.flipX = true;
         }
         #endregion
+        #region Death
         if (health <= 0)
         {
             Die();
         }
+        #endregion
+        #region Kills Level Up
+        if (killCount >= killCountThreshhold)
+        {
+            killCountLvlUps++;
+            killCountThreshhold = CalculateKillCountThreshhold(data.baseKillCountThreshhold, killCountLvlUps, data.killCountCoefficient, data.killCountPower);
+            IncreaseSpinSpeed(data.spinChargeIncreaseRate);
+            killCount = 0;
+        }
+        #endregion
         //if (Keyboard.current.spaceKey.wasPressedThisFrame)
         //{
         //    Debug.Log("Space Key Pressed!");
@@ -224,6 +239,14 @@ public class Player : MonoBehaviour
     public void IncreaseSpinSpeed(float increase)
     {
         spinsPerSecond += increase;
+    }
+    public void IncrementKillCount()
+    {
+        killCount++;
+    }
+    private int CalculateKillCountThreshhold(int baseThreshhold, int level, float coefficient, float power)
+    {
+        return (int)(baseThreshhold + coefficient * Mathf.Pow(level, power));
     }
     public float GetSpinsPerSecond()
     {
