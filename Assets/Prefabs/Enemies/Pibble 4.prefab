@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6163806308497802028}
   m_Layer: 3
   m_Name: Pibble 4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   data: {fileID: 11400000, guid: ec88c0c87e26ac64c8415ae90c6623d4, type: 2}
   rb: {fileID: 7124752289436083850}
-  anim: {fileID: 0}
+  anim: {fileID: 6163806308497802028}
 --- !u!50 &7124752289436083850
 Rigidbody2D:
   serializedVersion: 5
@@ -108,7 +108,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -124,7 +124,7 @@ Animator:
   m_GameObject: {fileID: 3166989030818888025}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 53d6802b0a77b1241b25ba230fad5b98, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9e1874c137944aa48a4da43f32444b61, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

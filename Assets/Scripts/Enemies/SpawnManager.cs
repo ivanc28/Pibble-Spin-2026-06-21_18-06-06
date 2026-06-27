@@ -13,11 +13,13 @@ public class SpawnManager : MonoBehaviour
     private int difficulty;
     [SerializeField] int maxEnemyCount;
     [SerializeField] int currentEnemyCount;
+    private int enemyListIndex;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         spawnTimer = secondsPerSpawn;
-        enemy = enemyList[0];
+        enemyListIndex = 0;
+        enemy = enemyList[enemyListIndex];
         difficulty = 1;
         currentEnemyCount = 0;
     }
@@ -63,7 +65,18 @@ public class SpawnManager : MonoBehaviour
                     SpawnClusterWave();
                 }
                 waveTimer = 0;
-                difficulty += 1;
+                if (difficulty % 4 == 0)
+                {
+                    enemyListIndex = 0;
+                    enemy = enemyList[enemyListIndex];
+                    difficulty += 1;
+                }
+                else
+                {
+                    enemyListIndex += 1;
+                    enemy = enemyList[enemyListIndex];
+                }
+
                 secondsPerSpawn -= 0.1f;
             }
             else

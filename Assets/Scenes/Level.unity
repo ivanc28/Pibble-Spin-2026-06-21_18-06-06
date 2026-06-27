@@ -2766,7 +2766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   enemyList:
   - {fileID: 3166989030818888025, guid: 119948193534c7b40969f6a05af8d26a, type: 3}
+  - {fileID: 3166989030818888025, guid: 3844c4b18998ba446bd8e14c3c0a3c55, type: 3}
   - {fileID: 3166989030818888025, guid: 0624124f61c6029448ba910cbf3b9d83, type: 3}
+  - {fileID: 3166989030818888025, guid: 0c84c2a7a52972340beca7027424b6ca, type: 3}
   secondsPerSpawn: 3
   enemiesSpawnedPerBatch: 5
   secondsPerWave: 30
