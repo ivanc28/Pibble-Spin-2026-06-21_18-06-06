@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = moveDir.normalized * moveSpeed;
         if(Mathf.Abs(rb.angularVelocity) >= data.killSpinSpeed)
         {
-            Player.Instance.IncreaseSpinSpeed(data.spinSpeedIncrease);
+            Player.Instance.IncrementKillCount();
             Die();
         }
         // TESTING ONLY:

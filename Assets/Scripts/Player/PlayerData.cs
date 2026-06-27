@@ -17,6 +17,9 @@ public class PlayerData : ScriptableObject
     public float baseSpinsPerSecond;
     [Header("Attacks")]
     public int maxAttacks;
+    public int baseKillCountThreshhold;
+    public float killCountCoefficient;
+    public float killCountPower;
     [Header("Utility")]
     public float basePickupRange;
 }

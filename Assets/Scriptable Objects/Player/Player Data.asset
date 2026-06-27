@@ -22,4 +22,7 @@ MonoBehaviour:
   spinChargeIncreaseRate: 5
   baseSpinsPerSecond: 1
   maxAttacks: 2
-  basePickupRange: 3
+  baseKillCountThreshhold: 10
+  killCountCoefficient: 3
+  killCountPower: 1.75
+  basePickupRange: 5
