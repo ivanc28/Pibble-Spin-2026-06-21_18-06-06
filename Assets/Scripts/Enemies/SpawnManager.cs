@@ -38,7 +38,10 @@ public class SpawnManager : MonoBehaviour
                         spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
                     }
                     //Debug.Log(spawnPoint);
-                    GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
+                    if (currentEnemyCount < maxEnemyCount)
+                    {
+                        GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
+                    }
                     // Debug.Log(e.transform.position);
                     // e.transform.position = spawnPoint;
                 }
@@ -68,6 +71,11 @@ public class SpawnManager : MonoBehaviour
                 waveTimer += Time.fixedDeltaTime;
             }
         }
+        else
+        {
+            waveTimer = 0;
+            spawnTimer = 0;
+        }
     }
 
     private void SpawnCircleWave()
@@ -77,7 +85,10 @@ public class SpawnManager : MonoBehaviour
         foreach (Transform child in wave.transform)
         {
             var spawnPoint = child.position;
-            Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
+            if (currentEnemyCount < maxEnemyCount)
+            {
+                GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
+            }
         }
     }
     private void SpawnClusterWave()
@@ -93,7 +104,10 @@ public class SpawnManager : MonoBehaviour
             foreach (Transform child in wave.transform)
             {
                 var spawnPoint = child.position;
-                Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
+                if (currentEnemyCount < maxEnemyCount)
+                {
+                    GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
+                }
             }
         }
     }
