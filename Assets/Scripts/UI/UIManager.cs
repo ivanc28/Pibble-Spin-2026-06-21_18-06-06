@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class UIManager : MonoBehaviour
     public Slider spinChargeBar;
     public TextMeshProUGUI currencyText;
     public TextMeshProUGUI clockText;
+    public GameObject deathScreen;
+    public TextMeshProUGUI scoreText;
 
     public static UIManager Instance;
     private void Awake()
@@ -49,5 +52,14 @@ public class UIManager : MonoBehaviour
     private void UpdateGameClock()
     {
         clockText.text = GameManager.Instance.GetGameTime().ToString("0");
+    }
+    public void ShowDeathScreen()
+    {
+        scoreText.text = "Score:\n" + GameManager.Instance.GetGameTime().ToString("0");
+        deathScreen.SetActive(true);
+    }
+    public void ResetButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
