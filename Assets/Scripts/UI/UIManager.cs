@@ -1,5 +1,7 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,7 +13,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI clockText;
     public GameObject deathScreen;
     public TextMeshProUGUI scoreText;
-
+    public GameObject tutorialCanvas;
+    private bool tutorialHidden = false;
     public static UIManager Instance;
     private void Awake()
     {
@@ -25,12 +28,17 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameManager.Instance.SetGamePaused(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!tutorialHidden && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            StartCoroutine(StartGame());
+            tutorialHidden = true;
+        }
         UpdateHealthBar();
         UpdateSpinBar();
         UpdateCurrency();
@@ -62,5 +70,11 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.SetGamePaused(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    private IEnumerator StartGame()
+    {
+        yield return null;  
+        tutorialCanvas.SetActive(false);
+        GameManager.Instance.SetGamePaused(false);
     }
 }

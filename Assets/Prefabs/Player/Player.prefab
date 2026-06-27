@@ -464,6 +464,7 @@ MonoBehaviour:
   playerRenderer: {fileID: 5690162336859535483}
   anim: {fileID: 5238268739937094994}
   spinningField: {fileID: 5194177066583937292}
+  input: {fileID: 6440207744833231996}
   allAttacks:
   - {fileID: 9098281570918576589}
   - {fileID: 1489341751398554664}
@@ -1838,7 +1839,7 @@ GameObject:
   - component: {fileID: 8178208206688369081}
   - component: {fileID: 5194177066583937292}
   - component: {fileID: 3271310800907724339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
