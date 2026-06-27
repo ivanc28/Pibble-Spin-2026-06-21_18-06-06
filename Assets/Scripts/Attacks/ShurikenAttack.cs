@@ -69,6 +69,10 @@ public class ShurikenAttack : Attack
                 shuriken.GetComponent<Shuriken>().ShootAt(target.position);
 
                 spinCounter = 0;
+                if(SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySound(Player.Instance.data.whooshClips, 0.4f, true, 1.3f, 1.5f);
+                }
             }
             
         }
