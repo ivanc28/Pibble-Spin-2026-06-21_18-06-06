@@ -2110,6 +2110,10 @@ PrefabInstance:
       propertyPath: spinsPerTrigger
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2687620367653721840, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3010137563829125034, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_Name
       value: Player
