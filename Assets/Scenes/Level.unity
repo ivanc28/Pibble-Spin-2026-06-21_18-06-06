@@ -2406,6 +2406,10 @@ PrefabInstance:
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 665859801284262807, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: spinsPerTrigger
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 874688993755258869, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06986

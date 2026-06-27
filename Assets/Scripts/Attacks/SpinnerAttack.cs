@@ -35,7 +35,7 @@ public class SpinnerAttack : Attack
         {
             // transform.position = Player.Instance.transform.position;
             hitActivationTimer += Time.fixedDeltaTime;
-            if (hitActivationTimer >= hitDuration)
+            if (hitActivationTimer >= hitDuration || !Player.Instance.GetIsSpinning())
             {
                 hitActivationTimer = 0;
                 Activate(false);

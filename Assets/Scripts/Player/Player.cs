@@ -319,6 +319,10 @@ public class Player : MonoBehaviour
     {
         return spinsPerSecond;
     }
+    public bool GetIsSpinning()
+    {
+        return isSpinning;
+    }
 
     private void SpawnFadingText()
     {

@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
         moveSpeed = Random.Range(data.minMoveSpeed, data.maxMoveSpeed);
         currencyDropped = Random.Range(data.minCurrencyDropped, data.maxCurrencyDropped + 1);
         transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(1);
-        rb.inertia = transform.parent.GetComponent<SpawnManager>().GetDifficulty();
+        rb.inertia = (transform.parent.GetComponent<SpawnManager>().GetDifficulty() / 2) + 1;
     }
 
     // Update is called once per frame
