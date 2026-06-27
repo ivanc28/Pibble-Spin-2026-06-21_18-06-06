@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public Slider healthBar;
     public Slider spinChargeBar;
+    public TextMeshProUGUI currencyText;
     public static UIManager Instance;
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateHealthBar();
         UpdateSpinBar();
+        UpdateCurrency();
     }
 
     private void UpdateHealthBar()
@@ -35,5 +38,9 @@ public class UIManager : MonoBehaviour
     private void UpdateSpinBar()
     {
         spinChargeBar.value = Player.Instance.GetSpinCharge() / Player.Instance.GetMaxSpinCharge();
+    }
+    private void UpdateCurrency()
+    {
+        currencyText.text = Player.Instance.inventory.GetCurrency().ToString();
     }
 }

@@ -31,7 +31,6 @@ public class Currency : MonoBehaviour
         {
             Collect();
             Destroy(gameObject);
-            Debug.Log(collision.gameObject.name);
         }
     }
 }

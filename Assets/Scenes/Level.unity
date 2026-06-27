@@ -3843,10 +3843,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1963994433}
-    - target: {fileID: 4427269599469001392, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5198397440418649414, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
       propertyPath: m_Name
       value: UIEssentials
