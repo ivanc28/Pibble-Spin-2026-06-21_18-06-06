@@ -19,6 +19,11 @@ public class UpgradeContainer : MonoBehaviour
     public void ClaimUpgrade()
     {
         upgrade.Apply(Player.Instance);
+        Player.Instance.inventory.AddUpgradeToClaimed(upgrade);
+        foreach(Shrine shrine in FindObjectsByType<Shrine>(FindObjectsSortMode.None))
+        {
+            shrine.UpdateShrineCost(ShrineSpawner.Instance.GetShrineCost(Player.Instance.inventory.GetUpgradeCount()));
+        }
         shrine.DisableShrine();
     }
 }

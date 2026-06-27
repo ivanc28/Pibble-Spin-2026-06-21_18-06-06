@@ -18,8 +18,7 @@ public class Shrine : MonoBehaviour
     private bool inRange;
     public void Initialize(int currency)
     {
-        currencyRequired = currency;
-        costText.text = $"Requires {currency}";
+        UpdateShrineCost(currency);
         upgradePool = UpgradePool.Instance;
         upgradeCanvas.worldCamera = Camera.main;
         upgradeCanvas.sortingLayerName = "UI";
@@ -85,6 +84,11 @@ public class Shrine : MonoBehaviour
     private void EnableUpgradeCanvas(bool enabled)
     {
         upgradeCanvas.gameObject.SetActive(enabled);
+    }
+    public void UpdateShrineCost(int newCost)
+    {
+        currencyRequired = newCost;
+        costText.text = $"Requires {newCost}";
     }
 
     public void DisableShrine()
