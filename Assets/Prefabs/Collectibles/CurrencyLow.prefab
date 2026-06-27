@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a6b64ced40eab47b2bfc84eb7ae20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Currency
-  currencyAmt: 5
+  currencyAmt: 1
   moveSpeed: 16
   rb: {fileID: 4093688403640022261}
   minSpawnSpeed: 6

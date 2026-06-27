@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     private float moveSpeed;
     private int currencyDropped;
     private float spinSpeedIncrease;
+    private bool isDead;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,10 +40,18 @@ public class Enemy : MonoBehaviour
     }
     private void Die()
     {
-        StartCoroutine(DieLogic());
+        if (!isDead)
+        {
+            StartCoroutine(DieLogic());
+        }
     }
     private IEnumerator DieLogic()
     {
+        if (isDead)
+        {
+            yield break;
+        }
+        isDead = true;
         SpawnCurrency((int)(currencyDropped * Player.Instance.stats.currencyDropMult));
         yield return null;
         Destroy(gameObject);
@@ -89,7 +98,8 @@ public class Enemy : MonoBehaviour
 
     private void InstantiateCurrency(int index, int numTimes)
     {
-        for(int i = 0; i < numTimes; i++)
+        Debug.Log($"Spawning {numTimes}x coin[{index}] (value {data.currencyValues[index].currencyAmt})");
+        for (int i = 0; i < numTimes; i++)
         {
             Currency currency = Instantiate(data.currencyValues[index], transform.position, Quaternion.identity);
             currency.SpawnAtRandomSpeed();
