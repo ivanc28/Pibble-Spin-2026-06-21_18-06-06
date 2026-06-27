@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Shoot Buzzsaws at nearby pibbles, piercing multiple pibbles
   flavorText: 
   upgradeCategory: 4
-  rarityWeight: 25
+  rarityWeight: 2500000
   repeatable: 0
   prerequisiteUpgrade: {fileID: 0}
   sprite: {fileID: 0}
