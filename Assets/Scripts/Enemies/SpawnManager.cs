@@ -100,4 +100,8 @@ public class SpawnManager : MonoBehaviour
     {
         currentEnemyCount += num;
     }
+    public int GetDifficulty()
+    {
+        return difficulty;
+    }
 }

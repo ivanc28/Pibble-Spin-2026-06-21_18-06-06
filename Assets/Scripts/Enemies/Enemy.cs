@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
         moveSpeed = Random.Range(data.minMoveSpeed, data.maxMoveSpeed);
         currencyDropped = Random.Range(data.minCurrencyDropped, data.maxCurrencyDropped + 1);
         transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(1);
+        rb.inertia = transform.parent.GetComponent<SpawnManager>().GetDifficulty();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = moveDir.normalized * moveSpeed;
         if(Mathf.Abs(rb.angularVelocity) >= data.killSpinSpeed)
         {
+        transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(-1);
             Player.Instance.IncrementKillCount();
             Die();
         }
@@ -41,7 +43,6 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator DieLogic()
     {
-        transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(-1);
         SpawnCurrency((int)(currencyDropped * Player.Instance.stats.currencyDropMult));
         yield return null;
         Destroy(gameObject);
