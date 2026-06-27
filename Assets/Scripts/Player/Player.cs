@@ -282,7 +282,9 @@ public class Player : MonoBehaviour
     {
         Debug.Log("you ded");
         canMove = false;
+        GameManager.Instance.SetGamePaused(true);
         rb.linearVelocity = Vector2.zero;
+        UIManager.Instance.ShowDeathScreen();
     }
     private bool ShouldDisableMovement()
     {

@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] GameObject[] waveSpawners;
     private int difficulty;
     [SerializeField] int maxEnemyCount;
-    private int currentEnemyCount;
+    [SerializeField] int currentEnemyCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +30,7 @@ public class SpawnManager : MonoBehaviour
             if (spawnTimer >= secondsPerSpawn)
             {
             
-                for (int i = 0; i < enemiesSpawnedPerBatch * (difficulty / 2 + 1); i++)
+                for (int i = 0; i < enemiesSpawnedPerBatch * (difficulty / 4 + 1); i++)
                 {
                     Vector2 spawnPoint = new Vector2(Random.Range(-10.0f,30.0f), Random.Range(-30.0f,30.0f));
                     while (Vector2.Distance(spawnPoint, Player.Instance.transform.position) < 5)
@@ -83,7 +83,7 @@ public class SpawnManager : MonoBehaviour
     private void SpawnClusterWave()
     {
         GameObject wave = waveSpawners[1];
-        for (int i = 0; i < difficulty; i++)
+        for (int i = 0; i < (difficulty / 4) + 1; i++)
         {
             wave.transform.position = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
             while (Vector2.Distance(wave.transform.position, Player.Instance.transform.position) < 10)
