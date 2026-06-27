@@ -12,8 +12,9 @@ public class PlayerData : ScriptableObject
     public float spinningMoveSpeedFactor;
     [Header("Health")]
     public float baseHealth;
-    public float iFrameTime;
     public float baseHealthRegen;
+    public float iFrameTime;
+    public float iFrameFlashRate;
     [Header("Spinning")]
     public float maxSpinCharge;
     public float spinChargeDecreaseRate;

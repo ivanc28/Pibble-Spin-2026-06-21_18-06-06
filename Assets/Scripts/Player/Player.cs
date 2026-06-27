@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using TMPro;
 using UnityEngine.Serialization;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
     private float spinChargeIncreaseRate;
     private float spinsPerSecond;
     private float attackTriggerTimer;
+    private bool isIFraming;
     
     [SerializeField] List<Attack> allAttacks = new List<Attack>();
     private List<Attack> availableAttacks = new List<Attack>();
@@ -251,7 +253,30 @@ public class Player : MonoBehaviour
     }
     public void DamagePlayer(float dmg)
     {
+        if (isIFraming)
+        {
+            return;
+        }
         health -= dmg;
+        isIFraming = true;
+        StartCoroutine(StartIFrames());
+    }
+    private IEnumerator StartIFrames()
+    {
+        float timer = 0;
+        float iFrameLengthCalc = data.iFrameTime;
+        while (timer < iFrameLengthCalc)
+        {
+            Shader defaultShader = playerRenderer.material.shader;
+            // Flash white
+            playerRenderer.material.shader = Shader.Find("GUI/Text Shader");
+            yield return new WaitForSeconds(data.iFrameFlashRate / 2);
+            // Flash normal
+            playerRenderer.material.shader = defaultShader;
+            yield return new WaitForSeconds(data.iFrameFlashRate / 2);
+            timer += data.iFrameFlashRate;
+        }
+        isIFraming = false;
     }
     public void Die()
     {
