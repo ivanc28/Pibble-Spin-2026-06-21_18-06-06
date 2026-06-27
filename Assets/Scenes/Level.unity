@@ -2058,6 +2058,10 @@ PrefabInstance:
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 635242756534996131, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: spinsPerTrigger
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 874688993755258869, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06986
@@ -2101,6 +2105,10 @@ PrefabInstance:
     - target: {fileID: 1489341751398554664, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: damage
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489341751398554664, guid: a295d99c92a541f469b6332ee045f438, type: 3}
+      propertyPath: spinsPerTrigger
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3010137563829125034, guid: a295d99c92a541f469b6332ee045f438, type: 3}
       propertyPath: m_Name
@@ -2199,12 +2207,13 @@ MonoBehaviour:
   enemyList:
   - {fileID: 3166989030818888025, guid: 119948193534c7b40969f6a05af8d26a, type: 3}
   - {fileID: 3166989030818888025, guid: 0624124f61c6029448ba910cbf3b9d83, type: 3}
-  secondsPerSpawn: 2
+  secondsPerSpawn: 3
   enemiesSpawnedPerBatch: 3
   secondsPerWave: 30
   waveSpawners:
   - {fileID: 1396146174}
   - {fileID: 268707500}
+  maxEnemyCount: 30
 --- !u!4 &981278421
 Transform:
   m_ObjectHideFlags: 0
@@ -3147,7 +3156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1396146175
 Transform:
   m_ObjectHideFlags: 0

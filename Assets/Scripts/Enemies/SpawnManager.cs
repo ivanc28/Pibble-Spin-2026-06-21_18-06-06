@@ -50,6 +50,7 @@ public class SpawnManager : MonoBehaviour
 
             if (waveTimer >= secondsPerWave)
             {
+                difficulty += 1;
                 if (Random.Range(0,5) < 2)
                 {
                     SpawnCircleWave();
