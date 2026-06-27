@@ -33,7 +33,7 @@ public class SpawnManager : MonoBehaviour
                 for (int i = 0; i < enemiesSpawnedPerBatch * (difficulty / 4 + 1); i++)
                 {
                     Vector2 spawnPoint = new Vector2(Random.Range(-10.0f,30.0f), Random.Range(-30.0f,30.0f));
-                    while (Vector2.Distance(spawnPoint, Player.Instance.transform.position) < 5)
+                    while (Vector2.Distance(spawnPoint, Player.Instance.transform.position) < 10)
                     {
                         spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
                     }
@@ -86,7 +86,7 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < (difficulty / 4) + 1; i++)
         {
             wave.transform.position = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
-            while (Vector2.Distance(wave.transform.position, Player.Instance.transform.position) < 10)
+            while (Vector2.Distance(wave.transform.position, Player.Instance.transform.position) < 15)
             {
                 wave.transform.position = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
             }
