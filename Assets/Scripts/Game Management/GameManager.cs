@@ -34,6 +34,14 @@ public class GameManager : MonoBehaviour
     {
         IsPaused = paused;
         Time.timeScale = paused ? 0 : 1;
+        if (paused)
+        {
+            Player.Instance.input.DeactivateInput();
+        }
+        else
+        {
+            Player.Instance.input.ActivateInput();
+        }
     }
 
     public float GetGameTime()

@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     private float spinsPerSecond;
     private float attackTriggerTimer;
     private bool isIFraming;
+    public PlayerInput input;
     
     [SerializeField] List<Attack> allAttacks = new List<Attack>();
     private List<Attack> availableAttacks = new List<Attack>();
@@ -89,6 +90,10 @@ public class Player : MonoBehaviour
     }
     public void Spin()
     {
+        if (GameManager.Instance.IsPaused)
+        {
+            return;
+        }
         if (!isSpinning && spinCharge < 0.01f) 
         { 
             return;
