@@ -2693,7 +2693,7 @@ MonoBehaviour:
   waveSpawners:
   - {fileID: 1396146174}
   - {fileID: 268707500}
-  maxEnemyCount: 50
+  maxEnemyCount: 100
   currentEnemyCount: 0
 --- !u!4 &981278421
 Transform:

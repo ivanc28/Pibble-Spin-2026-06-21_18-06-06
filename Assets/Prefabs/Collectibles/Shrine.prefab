@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab6fc621ae8b5c43a54660174fda12c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shrine
-  interactRange: 3
+  interactRange: 5
   numUpgradeOptions: 3
   upgradeCanvas: {fileID: 122381202558276531}
   costText: {fileID: 8970939067115863924}
