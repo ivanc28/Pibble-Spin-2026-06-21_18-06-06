@@ -65,7 +65,7 @@ public class SpawnManager : MonoBehaviour
                     SpawnClusterWave();
                 }
                 waveTimer = 0;
-                if (difficulty % 4 == 0)
+                if (enemyListIndex == 2)
                 {
                     enemyListIndex = 0;
                     enemy = enemyList[enemyListIndex];

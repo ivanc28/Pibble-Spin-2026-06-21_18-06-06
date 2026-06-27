@@ -23,5 +23,8 @@ MonoBehaviour:
   - {fileID: 2361795260253098963, guid: 1e32ba739f2546742ba2b0a95a4621fb, type: 3}
   - {fileID: 2361795260253098963, guid: 39b49f89ce856014c9d941699cd99fb5, type: 3}
   spinSpeedIncrease: 0
-  squeakClips: []
-  killClip: []
+  squeakClips:
+  - {fileID: 8300000, guid: 61a40b14f32f22a4eab718f72ae916ad, type: 3}
+  - {fileID: 8300000, guid: 64476e6caf6f0c14ca4f355aa4219a01, type: 3}
+  killClip:
+  - {fileID: 8300000, guid: caa9f916121f6f144903184efd536a01, type: 3}
