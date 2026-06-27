@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
         // anim = gameObject.GetComponent<Animator>();
         moveSpeed = Random.Range(data.minMoveSpeed, data.maxMoveSpeed);
         currencyDropped = Random.Range(data.minCurrencyDropped, data.maxCurrencyDropped + 1);
+        transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(1);
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator DieLogic()
     {
+        transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(-1);
         SpawnCurrency((int)(currencyDropped * Player.Instance.stats.currencyDropMult));
         yield return null;
         Destroy(gameObject);

@@ -138,7 +138,7 @@ public class Player : MonoBehaviour
                 ToggleSpin();
             }
         }
-        else if (spinCharge <= maxSpinCharge)
+        else if (spinCharge <= maxSpinCharge + stats.spinLifetimeIncrease)
         {
             ((BasicAttack)availableAttacks[0]).Activate(false);
             spinCharge += (spinChargeIncreaseRate + stats.spinRechargeRateIncrease) * Time.fixedDeltaTime;
