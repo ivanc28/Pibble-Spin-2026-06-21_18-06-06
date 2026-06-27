@@ -32,3 +32,9 @@ MonoBehaviour:
   killCountCoefficient: 3
   killCountPower: 1.75
   basePickupRange: 5
+  whooshClips:
+  - {fileID: 8300000, guid: 568442c6c97620641b28543609c591d0, type: 3}
+  - {fileID: 8300000, guid: 2b2ab1527505e4e4da13f957bc0b9fc0, type: 3}
+  - {fileID: 8300000, guid: 2ca3c2ed07735ff46a7f21d38eab13d7, type: 3}
+  shingClips:
+  - {fileID: 8300000, guid: af7eae7cc5d8b184f84df52226fd8fef, type: 3}
