@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
         {
             if (regenTimer >= secondsPerRegen)
             {
-                health += healthRegen;
+                health += healthRegen * stats.regenRateMult;
                 if (health > maxHealth)
                 {
                     health = maxHealth;
