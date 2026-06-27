@@ -63,13 +63,13 @@ public class SpinnerAttack : Attack
         if (activate)
         {
             // transform.position = Player.Instance.transform.position;
-            rb.AddTorque(2, ForceMode2D.Impulse);
+            rb.AddTorque(-1 * Mathf.PI * Player.Instance.GetSpinsPerSecond(), ForceMode2D.Impulse);
             spriteRenderer.enabled = true;
             
             foreach (Transform child in transform)
             {
                 child.GetComponent<Collider2D>().enabled = true;
-                child.GetComponent<SpriteRenderer>().enabled = true;
+                child.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
             }
         }
         else
@@ -79,7 +79,7 @@ public class SpinnerAttack : Attack
             foreach (Transform child in transform)
             {
                 child.GetComponent<Collider2D>().enabled = false;
-                child.GetComponent<SpriteRenderer>().enabled = false;
+                child.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
             }
         }
     }
