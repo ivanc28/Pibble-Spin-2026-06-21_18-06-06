@@ -44,7 +44,7 @@ public class ShrineSpawner : MonoBehaviour
             randomPos = GetRandomShrinePos();
         }
         Shrine newShrine = Instantiate(shrinePrefab, randomPos, Quaternion.identity);
-        newShrine.Initialize(GetShrineCost(useBaseCost ? 0 : GameManager.Instance.GetGameTime()));
+        newShrine.Initialize(GetShrineCost(Player.Instance.inventory.GetUpgradeCount()));
     }
     private Vector2 GetRandomShrinePos()
     {
@@ -67,9 +67,8 @@ public class ShrineSpawner : MonoBehaviour
     }
 
     // some formula
-    private int GetShrineCost(float gameTime)
+    public int GetShrineCost(int upgradesClaimed)
     {
-        int upgradeIteration = (int)(gameTime / shrineCostIncreaseRate);
-        return (int)(baseShrineCost + shrineCostIncreaseAmount * Mathf.Pow(upgradeIteration, shrineCostIncreasePower));
+        return (int)(baseShrineCost + shrineCostIncreaseAmount * Mathf.Pow(upgradesClaimed, shrineCostIncreasePower));
     }
 }

@@ -37,7 +37,10 @@ public class PlayerInventory
     {
         return upgradesClaimed.Contains(upgrade);
     }
-
+    public int GetUpgradeCount()
+    {
+        return upgradesClaimed.Count;
+    }
     public void ClearUpgrades()
     {
         upgradesClaimed.Clear();

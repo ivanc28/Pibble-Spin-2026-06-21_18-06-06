@@ -96,11 +96,11 @@ public class Player : MonoBehaviour
         anim.SetFloat("moveSpeed", rb.linearVelocity.magnitude);
         if(rb.linearVelocityX > 0)
         {
-            playerRenderer.flipX = false;
+            playerRenderer.flipX = true;
         }
         else if (rb.linearVelocityX < 0)
         {
-            playerRenderer.flipX = true;
+            playerRenderer.flipX = false;
         }
         #endregion
         #region Death
@@ -244,6 +244,7 @@ public class Player : MonoBehaviour
     {
         killCount++;
     }
+
     private int CalculateKillCountThreshhold(int baseThreshhold, int level, float coefficient, float power)
     {
         return (int)(baseThreshhold + coefficient * Mathf.Pow(level, power));
