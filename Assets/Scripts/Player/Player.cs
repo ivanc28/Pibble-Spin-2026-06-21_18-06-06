@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
         {
             killCountLvlUps++;
             killCountThreshhold = CalculateKillCountThreshhold(data.baseKillCountThreshhold, killCountLvlUps, data.killCountCoefficient, data.killCountPower);
-            IncreaseSpinSpeed(data.spinChargeIncreaseRate);
+            IncreaseSpinSpeed(0.05f);
             killCount = 0;
         }
         #endregion

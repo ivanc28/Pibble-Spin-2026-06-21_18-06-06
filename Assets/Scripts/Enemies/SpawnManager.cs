@@ -29,10 +29,11 @@ public class SpawnManager : MonoBehaviour
         {
             if (spawnTimer >= secondsPerSpawn)
             {
-                for (int i = 0; i < enemiesSpawnedPerBatch * difficulty; i++)
+            
+                for (int i = 0; i < enemiesSpawnedPerBatch * (difficulty / 2 + 1); i++)
                 {
-                    Vector2 spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
-                    while (Vector2.Distance(spawnPoint, Player.Instance.transform.position) < 15)
+                    Vector2 spawnPoint = new Vector2(Random.Range(-10.0f,30.0f), Random.Range(-30.0f,30.0f));
+                    while (Vector2.Distance(spawnPoint, Player.Instance.transform.position) < 5)
                     {
                         spawnPoint = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
                     }
@@ -51,6 +52,7 @@ public class SpawnManager : MonoBehaviour
             if (waveTimer >= secondsPerWave)
             {
                 difficulty += 1;
+                secondsPerSpawn -= 0.5f;
                 if (Random.Range(0,5) < 2)
                 {
                     SpawnCircleWave();
@@ -84,7 +86,7 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < difficulty; i++)
         {
             wave.transform.position = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
-            while (Vector2.Distance(wave.transform.position, Player.Instance.transform.position) < 20)
+            while (Vector2.Distance(wave.transform.position, Player.Instance.transform.position) < 10)
             {
                 wave.transform.position = new Vector2(Random.Range(-30.0f,30.0f), Random.Range(-30.0f,30.0f));
             }

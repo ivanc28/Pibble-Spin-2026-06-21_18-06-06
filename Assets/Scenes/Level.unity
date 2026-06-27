@@ -1973,12 +1973,12 @@ MonoBehaviour:
   - {fileID: 3166989030818888025, guid: 119948193534c7b40969f6a05af8d26a, type: 3}
   - {fileID: 3166989030818888025, guid: 0624124f61c6029448ba910cbf3b9d83, type: 3}
   secondsPerSpawn: 3
-  enemiesSpawnedPerBatch: 3
+  enemiesSpawnedPerBatch: 5
   secondsPerWave: 30
   waveSpawners:
   - {fileID: 1396146174}
   - {fileID: 268707500}
-  maxEnemyCount: 30
+  maxEnemyCount: 100
 --- !u!4 &981278421
 Transform:
   m_ObjectHideFlags: 0
