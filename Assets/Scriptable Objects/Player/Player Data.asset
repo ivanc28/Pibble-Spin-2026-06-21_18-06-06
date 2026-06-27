@@ -17,10 +17,10 @@ MonoBehaviour:
   moveDecelAmount: 15
   baseHealth: 100
   iFrameTime: 0
-  maxSpinCharge: 10
+  maxSpinCharge: 5
   spinChargeDecreaseRate: 1
-  spinChargeIncreaseRate: 5
-  baseSpinsPerSecond: 1
+  spinChargeIncreaseRate: 2
+  baseSpinsPerSecond: 1.5
   maxAttacks: 2
   baseKillCountThreshhold: 10
   killCountCoefficient: 3
