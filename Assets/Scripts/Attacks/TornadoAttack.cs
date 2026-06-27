@@ -63,10 +63,10 @@ public class TornadoAttack : Attack
             Transform target = FindNearestTarget();
             if (target != null)
             {
-                GameObject buzzSaw = Instantiate(projectile, transform.position, transform.rotation, null);
-                buzzSaw.SetActive(true);
-                buzzSaw.GetComponent<Tornado>().Init(base.GetDamage());
-                buzzSaw.GetComponent<Tornado>().ShootAt(target.position);
+                GameObject tornado = Instantiate(projectile, transform.position, transform.rotation, null);
+                tornado.SetActive(true);
+                tornado.GetComponent<Tornado>().Init(base.GetDamage());
+                tornado.GetComponent<Tornado>().ShootAt(target.position);
 
                 spinCounter = 0;
             }

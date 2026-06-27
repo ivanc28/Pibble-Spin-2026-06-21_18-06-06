@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     private Vector2 moveInput;
     private float maxHealth;
     private float health;
+    private float healthRegen;
+    private float regenTimer;
+    private float secondsPerRegen;
     private bool canMove;
     private float pickupRange;
     private int killCount;
@@ -49,6 +52,9 @@ public class Player : MonoBehaviour
         stats = new();
 
         maxHealth = data.baseHealth;
+        healthRegen = data.baseHealthRegen;
+        secondsPerRegen = 5;
+        regenTimer = 0;
         ResetHP();
         canMove = true;
         isSpinning = false;
@@ -167,6 +173,23 @@ public class Player : MonoBehaviour
             if (spinCharge > maxSpinCharge + stats.spinLifetimeIncrease)
             {
                 spinCharge = maxSpinCharge + stats.spinLifetimeIncrease;
+            }
+        }
+
+        if (health < maxHealth)
+        {
+            if (regenTimer >= secondsPerRegen)
+            {
+                health += healthRegen;
+                if (health > maxHealth)
+                {
+                    health = maxHealth;
+                }
+                regenTimer = 0;
+            }
+            else
+            {
+                regenTimer += Time.fixedDeltaTime;
             }
         }
     }
