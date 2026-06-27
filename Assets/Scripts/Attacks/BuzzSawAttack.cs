@@ -71,7 +71,7 @@ public class BuzzSawAttack : Attack
                 spinCounter = 0;
                 if (SoundManager.Instance != null)
                 {
-                    SoundManager.Instance.PlaySound(Player.Instance.data.whooshClips, 0.4f, true, 0.9f, 1.1f);
+                    SoundManager.Instance.PlaySound(Player.Instance.data.shingClips, 0.4f, true, 0.9f, 1.1f);
                 }
             }
         }
