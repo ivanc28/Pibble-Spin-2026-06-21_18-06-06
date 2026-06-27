@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
 using TMPro;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
@@ -79,6 +80,10 @@ public class Player : MonoBehaviour
     }
     public void Spin()
     {
+        if (!isSpinning && spinCharge < 0.01f) 
+        { 
+            return;
+        }
         ToggleSpin();
     }
     // -----------------------------------
@@ -165,12 +170,18 @@ public class Player : MonoBehaviour
     {
         // Calculate the direction we want to move in and our desired velocity
         Vector2 normalizedMoveInput = moveInput.normalized;
-        Vector2 targetSpeed = normalizedMoveInput * data.moveSpeed * stats.moveSpeedMult;
+        Vector2 targetSpeed = normalizedMoveInput * data.moveSpeed * stats.moveSpeedMult * (isSpinning ? data.spinningMoveSpeedFactor : 1f);
 
         #region Calculate AccelRate
         float accelRate;
-
-        accelRate = (Mathf.Abs(targetSpeed.magnitude) > 0.01f) ? data.moveAccelAmount : data.moveDecelAmount;
+        if (isSpinning)
+        {
+            accelRate = (Mathf.Abs(targetSpeed.magnitude) > 0.01f) ? data.spinningAccelAmount : data.spinningDecelAmount;
+        }
+        else
+        {
+            accelRate = (Mathf.Abs(targetSpeed.magnitude) > 0.01f) ? data.moveAccelAmount : data.moveDecelAmount;
+        }
         #endregion
 
         //Calculate difference between current velocity and desired velocity

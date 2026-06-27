@@ -7,6 +7,9 @@ public class PlayerData : ScriptableObject
     public float moveSpeed;
     public float moveAccelAmount;
     public float moveDecelAmount;
+    public float spinningAccelAmount;
+    public float spinningDecelAmount;
+    public float spinningMoveSpeedFactor;
     [Header("Health")]
     public float baseHealth;
     public float iFrameTime;
