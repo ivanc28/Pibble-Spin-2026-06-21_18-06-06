@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         availableAttacks.Add(allAttacks[0]);
 
         // availableAttacks.Add(allAttacks[1]);
-        availableAttacks.Add(allAttacks[2]);
+        availableAttacks.Add(allAttacks[3]);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
