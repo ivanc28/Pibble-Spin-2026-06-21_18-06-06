@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61af7a21bd8d513498d278e8e1a8c814, type: 3}
   m_Name: Fast Enemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  minMoveSpeed: 2
-  maxMoveSpeed: 3
+  minMoveSpeed: 4
+  maxMoveSpeed: 5
   contactDamage: 10
   killSpinSpeed: 1000
   minCurrencyDropped: 6
