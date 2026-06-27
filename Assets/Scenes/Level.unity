@@ -3927,9 +3927,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1963994433}
+    - target: {fileID: 4431477592326005594, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5198397440418649414, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
       propertyPath: m_Name
       value: UIEssentials
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1807
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -101
       objectReference: {fileID: 0}
     - target: {fileID: 5578178048533180422, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3938,6 +3950,10 @@ PrefabInstance:
     - target: {fileID: 5578178048533180422, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041596775805002347, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -269
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
