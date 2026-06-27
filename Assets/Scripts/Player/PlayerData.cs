@@ -13,11 +13,13 @@ public class PlayerData : ScriptableObject
     [Header("Health")]
     public float baseHealth;
     public float iFrameTime;
+    public float baseHealthRegen;
     [Header("Spinning")]
     public float maxSpinCharge;
     public float spinChargeDecreaseRate;
     public float spinChargeIncreaseRate;
     public float baseSpinsPerSecond;
+    public GameObject lvlUpText;
     [Header("Attacks")]
     public int maxAttacks;
     public int baseKillCountThreshhold;

@@ -7,7 +7,7 @@ public class Tornado : Projectile
     private float tickTimer;
     private float lifeTimer;
     [SerializeField] float lifetime;
-    private Collider2D collider;
+    private Collider2D tornadoCollider;
     private float hitDuration;
     private float hitActivationTimer;
 
@@ -17,8 +17,8 @@ public class Tornado : Projectile
         piercing = true;
         stationary = false;
         tickTimer = 0;
-        collider = GetComponent<Collider2D>();
-        collider.enabled = true;
+        tornadoCollider = GetComponent<Collider2D>();
+        tornadoCollider.enabled = true;
         hitDuration = 0.1f;
         hitActivationTimer = 0;
     }
@@ -34,7 +34,7 @@ public class Tornado : Projectile
         {
             if (tickTimer >= secondsPerTick)
             {
-                collider.enabled = true;
+                tornadoCollider.enabled = true;
                 tickTimer = 0;
             }
             else
@@ -46,13 +46,13 @@ public class Tornado : Projectile
             {
                 Destroy(gameObject);
             }
-            if (collider.enabled)
+            if (tornadoCollider.enabled)
             {
                 hitActivationTimer += Time.fixedDeltaTime;
                 if (hitActivationTimer >= hitDuration)
                 {
                     hitActivationTimer = 0;
-                    collider.enabled = false;
+                    tornadoCollider.enabled = false;
                 }
             }
         }
@@ -61,7 +61,7 @@ public class Tornado : Projectile
     public override void EndOfLifespanBehavior()
     {
         stationary = true;
-        collider.enabled = false;
+        tornadoCollider.enabled = false;
         rb.linearVelocity = new Vector2(0,0);
     }
 }

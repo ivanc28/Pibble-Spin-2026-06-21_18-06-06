@@ -10,7 +10,7 @@ public class PlayerInventory
     public void IncreaseCurrency(int amt)
     {
         currency += amt;
-        Debug.Log($"New Currency: {currency}");
+        //Debug.Log($"New Currency: {currency}");
     }
     public bool SpendCurrency(int amt)
     {
