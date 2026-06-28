@@ -137,7 +137,7 @@ public class Enemy : MonoBehaviour
                 damage = collision.gameObject.GetComponent<Attack>().GetDamage();
             }
             float predictedAngularVelocity = Mathf.Abs(rb.angularVelocity) + damage / rb.inertia * Mathf.Rad2Deg;
-            Debug.Log($"Predicted angular vel is {predictedAngularVelocity} and threshhold is {data.killSpinSpeed}");
+            //Debug.Log($"Predicted angular vel is {predictedAngularVelocity} and threshhold is {data.killSpinSpeed}");
             if (Mathf.Abs(predictedAngularVelocity) < data.killSpinSpeed)
             {
                 if (PibbleSoundManager.Instance != null)
