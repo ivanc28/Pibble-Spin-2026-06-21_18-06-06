@@ -1375,6 +1375,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &407113862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 407113864}
+  - component: {fileID: 407113863}
+  m_Layer: 0
+  m_Name: PibbleSoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &407113863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407113862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2197eda0e76f65d48bb238d7c25ff72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PibbleSoundManager
+  sfxGroup: {fileID: 6847404008628705662, guid: 578a4d8cf529c8540aea8549793d15bc, type: 2}
+  audioSourcePoolSize: 10
+--- !u!4 &407113864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407113862}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.22359, y: 6.04472, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &435073357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,7 +1450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f3124b5010f204db02ddcbbfb1752d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  sfxGroup: {fileID: 0}
+  sfxGroup: {fileID: -3111371033285421728, guid: 578a4d8cf529c8540aea8549793d15bc, type: 2}
   audioSourcePoolSize: 15
 --- !u!4 &435073359
 Transform:
@@ -6898,6 +6944,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 455639351615962084, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 681597188866961946, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 697205162537871014, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223676072512101279, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1363274244484297307, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6950,25 +7012,13 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1963994433}
+    - target: {fileID: 3492955298920129794, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5198397440418649414, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
       propertyPath: m_Name
       value: UIEssentials
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -104
-      objectReference: {fileID: 0}
-    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -107
       objectReference: {fileID: 0}
     - target: {fileID: 5578178048533180422, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6977,6 +7027,18 @@ PrefabInstance:
     - target: {fileID: 5578178048533180422, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828855146013447244, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717123514844001819, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8845110860508934201, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7055,4 +7117,5 @@ SceneRoots:
   - {fileID: 40834671}
   - {fileID: 2141644541}
   - {fileID: 435073359}
+  - {fileID: 407113864}
   - {fileID: 49381287}

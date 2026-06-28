@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject deathScreen;
     public TextMeshProUGUI scoreText;
     public GameObject tutorialCanvas;
+    public GameObject pauseCanvas;
     private bool tutorialHidden = false;
     public static UIManager Instance;
     private void Awake()
@@ -38,6 +39,20 @@ public class UIManager : MonoBehaviour
         {
             StartCoroutine(StartGame());
             tutorialHidden = true;
+        }
+        if (tutorialHidden)
+        {
+            if (Keyboard.current.pKey.wasPressedThisFrame || Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                if (!GameManager.Instance.IsPaused)
+                {
+                    PauseGame();
+                }
+                else
+                {
+                    ResumeGame();
+                }
+            }
         }
         UpdateHealthBar();
         UpdateSpinBar();
@@ -76,5 +91,15 @@ public class UIManager : MonoBehaviour
         yield return null;  
         tutorialCanvas.SetActive(false);
         GameManager.Instance.SetGamePaused(false);
+    }
+    public void PauseGame()
+    {
+        GameManager.Instance.SetGamePaused(true);
+        pauseCanvas.SetActive(true);
+    }
+    public void ResumeGame()
+    {
+        GameManager.Instance.SetGamePaused(false);
+        pauseCanvas.SetActive(false);
     }
 }
