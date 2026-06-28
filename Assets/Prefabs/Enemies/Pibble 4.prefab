@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7796846793815158206}
-  - component: {fileID: 5296439561031159200}
+  - component: {fileID: 2855963098796665551}
   - component: {fileID: 7124752289436083850}
   - component: {fileID: 2336257452987809766}
   - component: {fileID: 6163806308497802028}
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 2530073114369799901}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5296439561031159200
+--- !u!114 &2855963098796665551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,9 +45,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3166989030818888025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc10d0dfc0b9f741b1895fea4e5aca8, type: 3}
+  m_Script: {fileID: 11500000, guid: cb98722e1e5ee40659d6ed173959b9d5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  m_EditorClassIdentifier: Assembly-CSharp::PrincessPibble
   data: {fileID: 11400000, guid: ec88c0c87e26ac64c8415ae90c6623d4, type: 2}
   rb: {fileID: 7124752289436083850}
   anim: {fileID: 6163806308497802028}
