@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Player Data
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
   moveSpeed: 6
-  moveAccelAmount: 23
-  moveDecelAmount: 15
+  moveAccelAmount: 25
+  moveDecelAmount: 18
   spinningAccelAmount: 5
   spinningDecelAmount: 3
   spinningMoveSpeedFactor: 1.75
@@ -40,3 +40,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af7eae7cc5d8b184f84df52226fd8fef, type: 3}
   heavyWhooshClips:
   - {fileID: 8300000, guid: 0a13f57c658505249a55d4938b797f32, type: 3}
+  hurtClips:
+  - {fileID: 8300000, guid: b4ba0ebff357cf647bd24337b516bacf, type: 3}
+  - {fileID: 8300000, guid: 2f10581dd621b9f42947afdab3b1469b, type: 3}
+  - {fileID: 8300000, guid: 71a2c676f91c4c641b621876d4a290e7, type: 3}
+  - {fileID: 8300000, guid: 0dea349c6dbaac34e921fd44a1527e13, type: 3}

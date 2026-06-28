@@ -2823,6 +2823,12 @@ MonoBehaviour:
   - {fileID: 268707500}
   maxEnemyCount: 100
   currentEnemyCount: 0
+  grassParticle: {fileID: 2246236389557446697, guid: 086977a44b5a06340b3dbad84f7d2d72, type: 3}
+  grassClips:
+  - {fileID: 8300000, guid: 2c3638d9a6f14f94eba319af81e0fe68, type: 3}
+  - {fileID: 8300000, guid: c66ba66ab4e76724386be19b9dabf336, type: 3}
+  - {fileID: 8300000, guid: dae082361ad457b40996ae3c1c31dacf, type: 3}
+  spawnDelay: 1
 --- !u!4 &981278421
 Transform:
   m_ObjectHideFlags: 0

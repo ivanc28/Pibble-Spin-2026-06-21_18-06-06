@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.Serialization;
 using System.Collections;
+using System.Globalization;
 
 public class Player : MonoBehaviour
 {
@@ -274,6 +275,10 @@ public class Player : MonoBehaviour
         health -= dmg;
         isIFraming = true;
         StartCoroutine(StartIFrames());
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(data.hurtClips, 0.25f, true);
+        }
     }
     private IEnumerator StartIFrames()
     {

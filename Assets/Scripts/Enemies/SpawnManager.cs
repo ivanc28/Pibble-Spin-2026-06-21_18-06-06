@@ -15,6 +15,10 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] int currentEnemyCount;
     private int enemyListIndex;
     private int princessCounter;
+    [SerializeField] ParticleSystem grassParticle;
+    [SerializeField] AudioClip[] grassClips;
+    [SerializeField] float spawnDelay;
+    private float startSpawningDelayTimer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +33,11 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if(startSpawningDelayTimer < spawnDelay)
+        {
+            startSpawningDelayTimer += Time.fixedDeltaTime;
+            return;
+        }
         if (currentEnemyCount < maxEnemyCount)
         {
             if (spawnTimer >= secondsPerSpawn)
@@ -147,6 +156,11 @@ public class SpawnManager : MonoBehaviour
         else
         {
             GameObject e = Instantiate(enemy, spawnPoint, rotation, transform);
+        }
+        Instantiate(grassParticle, spawnPoint, grassParticle.transform.rotation);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(grassClips, 0.4f, true);
         }
     }
 }
