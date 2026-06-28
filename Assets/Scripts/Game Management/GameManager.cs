@@ -4,7 +4,8 @@ public class GameManager : MonoBehaviour
 {
     public bool IsPaused { get; private set; }
     private float gameTime;
-
+    [SerializeField] float winTime;
+    public bool HasWon { get; private set; }
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -27,6 +28,11 @@ public class GameManager : MonoBehaviour
         if (!IsPaused)
         {
             gameTime += Time.deltaTime;
+        }
+        if(gameTime > winTime && !HasWon)
+        {
+            HasWon = true;
+            UIManager.Instance.UpdateEndMessage();
         }
     }
 

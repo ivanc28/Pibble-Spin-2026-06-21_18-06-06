@@ -125,12 +125,16 @@ public class PrincessPibble : MonoBehaviour
             currency.SpawnAtRandomSpeed();
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             Player.Instance.DamagePlayer(data.contactDamage);
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
 
         if (collision.gameObject.CompareTag("Attack"))
         {
@@ -155,7 +159,7 @@ public class PrincessPibble : MonoBehaviour
                 damage = collision.gameObject.GetComponent<Attack>().GetDamage();
             }
             float predictedAngularVelocity = Mathf.Abs(rb.angularVelocity) + damage / rb.inertia * Mathf.Rad2Deg;
-            Debug.Log($"Predicted angular vel is {predictedAngularVelocity} and threshhold is {data.killSpinSpeed}");
+            //Debug.Log($"Predicted angular vel is {predictedAngularVelocity} and threshhold is {data.killSpinSpeed}");
             if (Mathf.Abs(predictedAngularVelocity) < data.killSpinSpeed)
             {
                 if (SoundManager.Instance != null)

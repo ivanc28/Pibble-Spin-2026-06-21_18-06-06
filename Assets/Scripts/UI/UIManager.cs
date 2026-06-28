@@ -16,6 +16,12 @@ public class UIManager : MonoBehaviour
     public GameObject tutorialCanvas;
     public GameObject pauseCanvas;
     private bool tutorialHidden = false;
+    public Color winColorClockText;
+    public TextMeshProUGUI endText;
+    [TextArea(2, 4)]
+    public string loseMessage;
+    [TextArea(2, 4)]
+    public string winMessage;
     public static UIManager Instance;
     private void Awake()
     {
@@ -75,10 +81,25 @@ public class UIManager : MonoBehaviour
     private void UpdateGameClock()
     {
         clockText.text = GameManager.Instance.GetGameTime().ToString("0");
+        if (GameManager.Instance.HasWon)
+        {
+            clockText.color = winColorClockText;
+        }
+    }
+    public void UpdateEndMessage()
+    {
+        if (GameManager.Instance.HasWon)
+        {
+            endText.text = winMessage;
+        }
+        else
+        {
+            endText.text = loseMessage;
+        }
     }
     public void ShowDeathScreen()
     {
-        scoreText.text = "Score:\n" + GameManager.Instance.GetGameTime().ToString("0");
+        scoreText.text = $"You lasted {GameManager.Instance.GetGameTime():0} seconds!";
         deathScreen.SetActive(true);
     }
     public void ResetButton()
