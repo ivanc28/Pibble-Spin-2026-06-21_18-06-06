@@ -54,6 +54,10 @@ public class PrincessPibble : MonoBehaviour
         else
         {
             rb.linearVelocity = moveDir.normalized * moveSpeed * -1;
+            if (Vector2.Distance(Player.Instance.transform.position, transform.position) > 30)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     private IEnumerator DieLogic()
