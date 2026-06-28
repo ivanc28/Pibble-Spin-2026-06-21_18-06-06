@@ -6954,6 +6954,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIEssentials
       objectReference: {fileID: 0}
+    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -104
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236952811118100621, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -107
+      objectReference: {fileID: 0}
     - target: {fileID: 5578178048533180422, guid: cdf7fe521d61c774c952bd0708db7aae, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
