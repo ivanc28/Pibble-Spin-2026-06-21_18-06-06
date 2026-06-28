@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
     }
     private void UpdateGameClock()
     {
-        clockText.text = GameManager.Instance.GetGameTime().ToString("0");
+        clockText.text = Mathf.FloorToInt(GameManager.Instance.GetGameTime()).ToString("0");
         if (GameManager.Instance.HasWon)
         {
             clockText.color = winColorClockText;
@@ -99,7 +99,7 @@ public class UIManager : MonoBehaviour
     }
     public void ShowDeathScreen()
     {
-        scoreText.text = $"You lasted {GameManager.Instance.GetGameTime():0} seconds!";
+        scoreText.text = $"You lasted {Mathf.FloorToInt(GameManager.Instance.GetGameTime())} seconds!";
         deathScreen.SetActive(true);
     }
     public void ResetButton()

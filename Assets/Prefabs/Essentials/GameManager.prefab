@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   winTime: 300
+  winClip: {fileID: 8300000, guid: 60cc4921e272a6840a5a08c3c48c34ea, type: 3}

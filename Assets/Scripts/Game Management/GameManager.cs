@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     public bool IsPaused { get; private set; }
     private float gameTime;
     [SerializeField] float winTime;
+    [SerializeField] AudioClip winClip;
     public bool HasWon { get; private set; }
     public static GameManager Instance { get; private set; }
     private void Awake()
@@ -33,6 +34,10 @@ public class GameManager : MonoBehaviour
         {
             HasWon = true;
             UIManager.Instance.UpdateEndMessage();
+            if(SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySound(winClip, 1f);
+            }
         }
     }
 
