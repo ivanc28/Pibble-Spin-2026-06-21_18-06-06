@@ -54,6 +54,11 @@ MonoBehaviour:
   minSpawnSpeed: 6
   maxSpawnSpeed: 10
   collectDelay: 0.5
+  collectClips:
+  - {fileID: 8300000, guid: 825630e20a0c1c043a00a8f2537783b5, type: 3}
+  - {fileID: 8300000, guid: 33d571cca24f951488d4910b7b32bd5d, type: 3}
+  - {fileID: 8300000, guid: 6d78d0b783ab77a47906b7d894d96343, type: 3}
+  - {fileID: 8300000, guid: 53ec0c0d8f61381458b28e774599f8a4, type: 3}
 --- !u!58 &1375164126869950075
 CircleCollider2D:
   m_ObjectHideFlags: 0

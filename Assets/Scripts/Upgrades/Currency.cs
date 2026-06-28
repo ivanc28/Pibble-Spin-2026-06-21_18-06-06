@@ -8,6 +8,7 @@ public class Currency : MonoBehaviour
     public float minSpawnSpeed;
     public float maxSpawnSpeed;
     public float collectDelay;
+    public AudioClip[] collectClips;
     private float collectDelayTimer;
     private void Update()
     {
@@ -25,6 +26,10 @@ public class Currency : MonoBehaviour
     private void Collect()
     {
         Player.Instance.inventory.IncreaseCurrency(currencyAmt);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(collectClips, 0.4f, true);
+        }
     }
     public void SpawnAtRandomSpeed()
     {

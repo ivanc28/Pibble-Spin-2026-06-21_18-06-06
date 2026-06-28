@@ -34,4 +34,6 @@ public class PlayerData : ScriptableObject
     public AudioClip[] shingClips;
     public AudioClip[] heavyWhooshClips;
     public AudioClip[] hurtClips;
+    public AudioClip[] upgradeClips;
+    public AudioClip[] toggleSpinClip;
 }

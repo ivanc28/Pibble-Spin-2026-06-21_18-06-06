@@ -20,6 +20,10 @@ public class UpgradeContainer : MonoBehaviour
     {
         upgrade.Apply(Player.Instance);
         Player.Instance.inventory.AddUpgradeToClaimed(upgrade);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(Player.Instance.data.upgradeClips, 0.6f);
+        }
         foreach(Shrine shrine in FindObjectsByType<Shrine>(FindObjectsSortMode.None))
         {
             shrine.UpdateShrineCost(ShrineSpawner.Instance.GetShrineCost(Player.Instance.inventory.GetUpgradeCount()));

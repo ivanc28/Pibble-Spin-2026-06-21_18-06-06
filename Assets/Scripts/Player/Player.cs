@@ -151,22 +151,25 @@ public class Player : MonoBehaviour
             return;
         }
         Move();
-        if (isSpinning && spinCharge > 0)
+        if (isSpinning)
         {
-            spinCharge -= spinChargeDecreaseRate * Time.fixedDeltaTime;
-            if (attackTriggerTimer <= 0)
+            if(spinCharge > 0)
             {
-                foreach (Attack a in availableAttacks)
+                spinCharge -= spinChargeDecreaseRate * Time.fixedDeltaTime;
+                if (attackTriggerTimer <= 0)
                 {
-                    a.Trigger();
+                    foreach (Attack a in availableAttacks)
+                    {
+                        a.Trigger();
+                    }
+                    attackTriggerTimer = 1 / spinsPerSecond;
                 }
-                attackTriggerTimer = 1 / spinsPerSecond;
+                else
+                {
+                    attackTriggerTimer -= 1 * Time.fixedDeltaTime;
+                }
             }
             else
-            {
-                attackTriggerTimer -= 1 * Time.fixedDeltaTime;
-            }
-            if (spinCharge < 0)
             {
                 spinCharge = 0;
                 if (isSpinning)
@@ -238,6 +241,10 @@ public class Player : MonoBehaviour
             spinningField.Play();
         }
         ((BasicAttack)availableAttacks[0]).Activate(isSpinning);
+        if(SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySoundIfNotPlaying(data.toggleSpinClip, 0.7f, true);
+        }
         //Debug.Log(isSpinning);
     }
 

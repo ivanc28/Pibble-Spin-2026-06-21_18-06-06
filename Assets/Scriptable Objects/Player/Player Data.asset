@@ -46,3 +46,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f10581dd621b9f42947afdab3b1469b, type: 3}
   - {fileID: 8300000, guid: 71a2c676f91c4c641b621876d4a290e7, type: 3}
   - {fileID: 8300000, guid: 0dea349c6dbaac34e921fd44a1527e13, type: 3}
+  upgradeClips:
+  - {fileID: 8300000, guid: 4df0f34a047199647880e650f3ef8916, type: 3}
+  toggleSpinClip:
+  - {fileID: 8300000, guid: 4d5db696a45bf8c45b61081874d0494f, type: 3}
