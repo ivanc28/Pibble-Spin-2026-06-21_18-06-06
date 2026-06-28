@@ -53,9 +53,9 @@ public class Enemy : MonoBehaviour
         transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(-1);
         Player.Instance.IncrementKillCount();
         SpawnCurrency((int)(currencyDropped * Player.Instance.stats.currencyDropMult));
-        if (SoundManager.Instance != null)
+        if (PibbleSoundManager.Instance != null)
         {
-            SoundManager.Instance.PlaySound(data.killClip, 0.4f, true);
+            PibbleSoundManager.Instance.PlaySound(data.killClip, 0.4f, true);
         }
         yield return null;
         Destroy(gameObject);
@@ -140,9 +140,9 @@ public class Enemy : MonoBehaviour
             Debug.Log($"Predicted angular vel is {predictedAngularVelocity} and threshhold is {data.killSpinSpeed}");
             if (Mathf.Abs(predictedAngularVelocity) < data.killSpinSpeed)
             {
-                if (SoundManager.Instance != null)
+                if (PibbleSoundManager.Instance != null)
                 {
-                    SoundManager.Instance.PlaySound(data.squeakClips, 0.3f, true);
+                     PibbleSoundManager.Instance.PlaySound(data.squeakClips, 0.3f, true);
                 }
             }
             rb.AddTorque(damage, ForceMode2D.Impulse);
