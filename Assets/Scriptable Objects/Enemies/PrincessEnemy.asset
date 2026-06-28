@@ -16,8 +16,8 @@ MonoBehaviour:
   maxMoveSpeed: 3
   contactDamage: 15
   killSpinSpeed: 1000
-  minCurrencyDropped: 6
-  maxCurrencyDropped: 10
+  minCurrencyDropped: 18
+  maxCurrencyDropped: 20
   currencyValues:
   - {fileID: 2361795260253098963, guid: b993cc4f43a16824fbadd1fba3fb807a, type: 3}
   - {fileID: 2361795260253098963, guid: 1e32ba739f2546742ba2b0a95a4621fb, type: 3}
