@@ -13,6 +13,7 @@ public class PlayerData : ScriptableObject
     [Header("Health")]
     public float baseHealth;
     public float baseHealthRegen;
+    public float baseSecondsPerRegen;
     public float iFrameTime;
     public float iFrameFlashRate;
     [Header("Spinning")]

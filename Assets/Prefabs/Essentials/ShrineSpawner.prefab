@@ -78,13 +78,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429ad52d0d497854d966f1d73edfe713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShrineSpawner
-  maxShrines: 5
+  maxShrines: 7
   shrinePrefab: {fileID: -702504408560526025, guid: de0f9802770b79e40a46e35fca9396bd, type: 3}
   bottomLeftShrineBound: {fileID: 8337474294603817449}
   topRightShrineBound: {fileID: 4038764753785765156}
   minSpawnDistanceFromOtherEntities: 20
   baseShrineCost: 100
-  shrineCostIncreaseRate: 45
   shrineCostIncreaseAmount: 55
   shrineCostIncreasePower: 1.5
 --- !u!1 &5727857771893671374

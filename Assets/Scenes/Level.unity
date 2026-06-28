@@ -2815,9 +2815,9 @@ MonoBehaviour:
   - {fileID: 3166989030818888025, guid: 3844c4b18998ba446bd8e14c3c0a3c55, type: 3}
   - {fileID: 3166989030818888025, guid: 0624124f61c6029448ba910cbf3b9d83, type: 3}
   - {fileID: 3166989030818888025, guid: 0c84c2a7a52972340beca7027424b6ca, type: 3}
-  secondsPerSpawn: 3
-  enemiesSpawnedPerBatch: 5
-  secondsPerWave: 30
+  secondsPerSpawn: 4
+  enemiesSpawnedPerBatch: 6
+  secondsPerWave: 40
   waveSpawners:
   - {fileID: 1396146174}
   - {fileID: 268707500}

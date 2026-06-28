@@ -12,6 +12,7 @@ public class PlayerStats
     public float damageReductionMult = 1f;
     public float maxHPMult = 1f;
     public float regenRateMult = 1f;
+    public float regenAmtMult = 1f;
     // Utility
     public float pickupRangeMult = 1f;
     public float currencyDropMult = 1f;

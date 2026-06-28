@@ -2579,7 +2579,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 3.36
+      value: 4.28
       mode: 0
       spread: 0
       speed:
@@ -7567,7 +7567,7 @@ MonoBehaviour:
   damage: 10
   spinsPerTrigger: 1
   spinCounter: 0
-  attackRange: 3
+  attackRange: 3.5
   spriteRenderer: {fileID: 9098281570918576595}
   rb: {fileID: 0}
 --- !u!58 &9098281570918576590
@@ -7605,7 +7605,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 3
+  m_Radius: 3.5
 --- !u!50 &9098281570918576591
 Rigidbody2D:
   serializedVersion: 5
@@ -7687,7 +7687,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9098281570918576588}

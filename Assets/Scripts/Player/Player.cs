@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 
         maxHealth = data.baseHealth;
         healthRegen = data.baseHealthRegen;
-        secondsPerRegen = 5;
+        secondsPerRegen = data.baseSecondsPerRegen;
         regenTimer = 0;
         ResetHP();
         canMove = true;
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        if (!isSpinning && spinCharge < 0.01f) 
+        if (spinCharge < 0.05f) 
         { 
             return;
         }
@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
         {
             killCountLvlUps++;
             killCountThreshhold = CalculateKillCountThreshhold(data.baseKillCountThreshhold, killCountLvlUps, data.killCountCoefficient, data.killCountPower);
-            IncreaseSpinSpeed(0.1f);
+            IncreaseSpinSpeed(0.2f);
             SpawnFadingText();
             killCount = 0;
         }
@@ -187,9 +187,9 @@ public class Player : MonoBehaviour
 
         if (health < maxHealth)
         {
-            if (regenTimer >= secondsPerRegen)
+            if (regenTimer >= secondsPerRegen / stats.regenRateMult)
             {
-                health += healthRegen * stats.regenRateMult;
+                health += healthRegen * stats.regenAmtMult;
                 if (health > maxHealth)
                 {
                     health = maxHealth;

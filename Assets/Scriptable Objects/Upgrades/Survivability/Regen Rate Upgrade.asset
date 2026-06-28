@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d92ef9e300b6f6949adb84a57fba96f8, type: 3}
-  m_Name: Regen Upgrade
+  m_Name: Regen Rate Upgrade
   m_EditorClassIdentifier: Assembly-CSharp::RegenUpgrade
   upgradeName: Cat Wants Sleep
-  description: Increases health regeneration by 15%
+  description: Increases health regeneration rate by 20%
   flavorText: 
   upgradeCategory: 2
-  rarityWeight: 25
+  rarityWeight: 30
   repeatable: 1
   prerequisiteUpgrade: {fileID: 0}
   sprite: {fileID: 0}
-  regenMult: 0.15
+  regenMult: 0.2
