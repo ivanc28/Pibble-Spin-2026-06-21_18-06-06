@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Enemy : MonoBehaviour
+public class PrincessPibble : MonoBehaviour
 {
     public EnemyData data;
     public Rigidbody2D rb;
@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     private int currencyDropped;
     private float spinSpeedIncrease;
     private bool isDead;
+    private bool forwards;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,13 +20,13 @@ public class Enemy : MonoBehaviour
         currencyDropped = Random.Range(data.minCurrencyDropped, data.maxCurrencyDropped + 1);
         transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(1);
         rb.inertia = (transform.parent.GetComponent<SpawnManager>().GetDifficulty() / 2) + 1;
+        forwards = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 moveDir = Player.Instance.transform.position - transform.position;
-        rb.linearVelocity = moveDir.normalized * moveSpeed;
+        Move(forwards);
         if(Mathf.Abs(rb.angularVelocity) >= data.killSpinSpeed)
         {
             Die();
@@ -43,6 +44,18 @@ public class Enemy : MonoBehaviour
             StartCoroutine(DieLogic());
         }
     }
+    private void Move(bool forwards)
+    {
+        Vector2 moveDir = Player.Instance.transform.position - transform.position;
+        if (forwards)
+        {
+            rb.linearVelocity = moveDir.normalized * moveSpeed;
+        }
+        else
+        {
+            rb.linearVelocity = moveDir.normalized * moveSpeed * -1;
+        }
+    }
     private IEnumerator DieLogic()
     {
         if (isDead)
@@ -53,9 +66,9 @@ public class Enemy : MonoBehaviour
         transform.parent.GetComponent<SpawnManager>().IncrementEnemyCount(-1);
         Player.Instance.IncrementKillCount();
         SpawnCurrency((int)(currencyDropped * Player.Instance.stats.currencyDropMult));
-        if (PibbleSoundManager.Instance != null)
+        if (SoundManager.Instance != null)
         {
-            PibbleSoundManager.Instance.PlaySound(data.killClip, 0.4f, true);
+            SoundManager.Instance.PlaySound(data.killClip, 0.4f, true);
         }
         yield return null;
         Destroy(gameObject);
@@ -121,6 +134,7 @@ public class Enemy : MonoBehaviour
             {
                 anim.SetBool("isDamaged", true);
                 rb.angularVelocity = 0;
+                forwards = false;
             }
             //Debug.Log("enemy hit");
             float damage = 0;
@@ -140,9 +154,9 @@ public class Enemy : MonoBehaviour
             Debug.Log($"Predicted angular vel is {predictedAngularVelocity} and threshhold is {data.killSpinSpeed}");
             if (Mathf.Abs(predictedAngularVelocity) < data.killSpinSpeed)
             {
-                if (PibbleSoundManager.Instance != null)
+                if (SoundManager.Instance != null)
                 {
-                     PibbleSoundManager.Instance.PlaySound(data.squeakClips, 0.3f, true);
+                    SoundManager.Instance.PlaySound(data.squeakClips, 0.3f, true);
                 }
             }
             rb.AddTorque(damage, ForceMode2D.Impulse);
