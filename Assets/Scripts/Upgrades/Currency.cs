@@ -7,8 +7,15 @@ public class Currency : MonoBehaviour
     public Rigidbody2D rb;
     public float minSpawnSpeed;
     public float maxSpawnSpeed;
+    public float collectDelay;
+    private float collectDelayTimer;
     private void Update()
     {
+        if(collectDelayTimer < collectDelay)
+        {
+            collectDelayTimer += Time.deltaTime;
+            return;
+        }
         if (Player.Instance.ItemInRange(transform))
         {
             Vector2 dir = Player.Instance.transform.position - transform.position;
