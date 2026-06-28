@@ -14,6 +14,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] int maxEnemyCount;
     [SerializeField] int currentEnemyCount;
     private int enemyListIndex;
+    private int princessCounter;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +23,7 @@ public class SpawnManager : MonoBehaviour
         enemy = enemyList[enemyListIndex];
         difficulty = 1;
         currentEnemyCount = 0;
+        princessCounter = 0;
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class SpawnManager : MonoBehaviour
                     //Debug.Log(spawnPoint);
                     if (currentEnemyCount < maxEnemyCount)
                     {
-                        GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
+                        SpawnEnemy(enemy, spawnPoint, Quaternion.identity, transform);
                     }
                     // Debug.Log(e.transform.position);
                     // e.transform.position = spawnPoint;
@@ -100,7 +102,7 @@ public class SpawnManager : MonoBehaviour
             var spawnPoint = child.position;
             if (currentEnemyCount < maxEnemyCount)
             {
-                GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
+                SpawnEnemy(enemy, spawnPoint, Quaternion.identity, transform);
             }
         }
     }
@@ -119,7 +121,7 @@ public class SpawnManager : MonoBehaviour
                 var spawnPoint = child.position;
                 if (currentEnemyCount < maxEnemyCount)
                 {
-                    GameObject e = Instantiate(enemy, spawnPoint, Quaternion.identity, transform);
+                    SpawnEnemy(enemy, spawnPoint, Quaternion.identity, transform);
                 }
             }
         }
@@ -132,5 +134,19 @@ public class SpawnManager : MonoBehaviour
     public int GetDifficulty()
     {
         return difficulty;
+    }
+
+    private void SpawnEnemy(GameObject enemy, Vector2 spawnPoint, Quaternion rotation, Transform transform)
+    {
+        princessCounter += 1;
+        if (princessCounter >= 100)
+        {
+            GameObject e = Instantiate(enemyList[3], spawnPoint, rotation, transform);
+            princessCounter = 0;
+        }
+        else
+        {
+            GameObject e = Instantiate(enemy, spawnPoint, rotation, transform);
+        }
     }
 }
