@@ -29,4 +29,8 @@ public abstract class Attack : MonoBehaviour
     {
         return modifiedDamage;
     }
+    public void IncreaseBaseDamage(float d)
+    {
+        damage += d;
+    }
 }
